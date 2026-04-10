@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>運営アドバイザリー | TUNAG for UNION</title>
+  <meta name="description" content="労働組合の執行部運営を、組合運営経験者が「参謀」として伴走支援。350組合以上の実績を持つTUNAG for UNIONの運営アドバイザリーサービス。">
+  <meta property="og:title" content="運営アドバイザリー | TUNAG for UNION">
+  <meta property="og:description" content="労働組合の執行部運営を、組合運営経験者が「参謀」として伴走支援するアドバイザリーサービス。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://biz.tunag.jp/lp/union/advisory">
+  <link rel="icon" type="image/png" href="TUNAG_for_UNION_logo.png">
+  <link rel="apple-touch-icon" href="TUNAG_for_UNION_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #107bff;
+      --primary-dark: #283e59;
+      --primary-light: #7dc4ff;
+      --accent: #f44646;
+      --accent-hover: #d93636;
+      --bg-light: #f1f5f9;
+      --bg-white: #FFFFFF;
+      --text-main: #283e59;
+      --text-sub: #64748b;
+      --text-light: #94a3b8;
+      --border: #e2e8f0;
+      --section-gap: 80px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text-main);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+    .header-logo-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .header-logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .header-logo-text {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .header-logo-text span {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-sub);
+    }
+    .header-cta {
+      display: flex;
+      gap: 10px;
+    }
+    .header-cta a {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-outline {
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border: 1.5px solid var(--primary);
+    }
+    .btn-primary:hover { background: #0a6ae6; border-color: #0a6ae6; }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 140px 24px 80px;
+      background: linear-gradient(135deg, #283e59 0%, #1e3a5f 50%, #1a4a7a 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #7dc4ff;
+    }
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.8;
+      opacity: 0.9;
+      margin-bottom: 36px;
+      max-width: 640px;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .cta-main {
+      background: var(--accent);
+      color: #fff;
+    }
+    .cta-main:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(244,70,70,0.3); }
+    .cta-sub {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.3);
+    }
+    .cta-sub:hover { background: rgba(255,255,255,0.2); }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      padding: var(--section-gap) 24px;
+    }
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-sub);
+      margin-bottom: 48px;
+      max-width: 700px;
+    }
+
+    /* ===== PAIN POINTS ===== */
+    .pain-section { background: var(--bg-light); }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .pain-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s;
+    }
+    .pain-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .pain-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: #daeeff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .pain-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+    .pain-card p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* ===== SERVICE OVERVIEW ===== */
+    .overview-content {
+      background: var(--primary-dark);
+      border-radius: 16px;
+      padding: 48px;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+    .overview-content h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .overview-content p {
+      font-size: 16px;
+      line-height: 1.9;
+      opacity: 0.92;
+    }
+    .overview-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .pillar-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pillar-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .pillar-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--primary-dark);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .pillar-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--primary-dark);
+    }
+    .pillar-card p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* ===== SUPPORT AREAS ===== */
+    .support-section { background: var(--bg-light); }
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .support-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary-dark);
+      transition: box-shadow 0.2s;
+    }
+    .support-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .support-card-icon {
+      width: 44px;
+      height: 44px;
+      background: #daeeff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    .support-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--primary-dark);
+    }
+    .support-card p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* ===== FLOW ===== */
+    .flow-steps {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      position: relative;
+      padding-bottom: 40px;
+    }
+    .flow-step:last-child { padding-bottom: 0; }
+    .flow-step-marker {
+      flex-shrink: 0;
+      width: 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .flow-step-num {
+      width: 48px;
+      height: 48px;
+      background: var(--primary-dark);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+    }
+    .flow-step-line {
+      width: 2px;
+      flex: 1;
+      background: var(--border);
+      margin-top: 8px;
+    }
+    .flow-step:last-child .flow-step-line { display: none; }
+    .flow-step-content {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      border: 1px solid var(--border);
+      flex: 1;
+    }
+    .flow-step-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--primary-dark);
+    }
+    .flow-step-content p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    .monthly-cycle {
+      margin-top: 48px;
+      background: var(--bg-light);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    .monthly-cycle h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .cycle-items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .cycle-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .cycle-item-icon { font-size: 28px; margin-bottom: 10px; }
+    .cycle-item h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+    }
+    .cycle-item p {
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+
+    /* ===== REASONS ===== */
+    .reasons-section { background: var(--bg-light); }
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .reason-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 36px 28px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .reason-number {
+      font-size: 52px;
+      font-weight: 800;
+      color: #107bff;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .reason-unit {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 16px;
+    }
+    .reason-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+    .reason-card p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* ===== PRICING ===== */
+    .pricing-box {
+      background: #fff;
+      border-radius: 16px;
+      border: 2px solid var(--primary-dark);
+      overflow: hidden;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .pricing-header {
+      background: var(--primary-dark);
+      color: #fff;
+      padding: 24px 32px;
+      text-align: center;
+    }
+    .pricing-header h3 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .pricing-body {
+      padding: 36px 32px;
+      text-align: center;
+    }
+    .pricing-amount {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pricing-amount span {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .pricing-note {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 24px;
+    }
+    .pricing-details {
+      text-align: left;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+    .pricing-details li {
+      list-style: none;
+      font-size: 15px;
+      padding: 8px 0;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pricing-details li::before {
+      content: '✓';
+      color: #107bff;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .pricing-merit {
+      margin-top: 24px;
+      background: #daeeff;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid #b8daff;
+    }
+    .pricing-merit p {
+      font-size: 14px;
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+    .pricing-merit strong {
+      color: #107bff;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+    .faq-question:hover { background: var(--bg-light); }
+    .faq-question::after {
+      content: '+';
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      font-size: 15px;
+      color: var(--text-sub);
+      line-height: 1.8;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, #2952a3 100%);
+      color: #fff;
+      text-align: center;
+    }
+    .cta-section .section-title { color: #fff; }
+    .cta-section p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 36px;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cta-buttons a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    /* ===== MID CTA ===== */
+    .mid-cta {
+      background: #daeeff;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .mid-cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .mid-cta p {
+      font-size: 16px;
+      color: var(--text-main);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .mid-cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .mid-cta-buttons a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #1e2d3d;
+      color: rgba(255,255,255,0.7);
+      padding: 60px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+    .footer-brand h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .footer-links h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero { padding: 120px 20px 60px; }
+      .hero h1 { font-size: 28px; }
+      .hero-sub { font-size: 15px; }
+      .hero-cta a { font-size: 14px; padding: 14px 24px; width: 100%; justify-content: center; }
+
+      .section { padding: 56px 20px; }
+      .section-title { font-size: 24px; }
+
+      .pain-grid { grid-template-columns: 1fr; }
+      .overview-pillars { grid-template-columns: 1fr; }
+      .overview-content { padding: 28px 20px; }
+      .support-grid { grid-template-columns: 1fr; }
+      .reasons-grid { grid-template-columns: 1fr; }
+      .cycle-items { grid-template-columns: 1fr; }
+
+      .flow-step { flex-direction: column; gap: 12px; }
+      .flow-step-marker { flex-direction: row; width: auto; }
+      .flow-step-line { width: auto; height: 2px; flex: 1; margin-top: 0; margin-left: 8px; }
+
+      .pricing-body { padding: 24px 20px; }
+      .pricing-amount { font-size: 36px; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-links { grid-template-columns: 1fr; }
+
+      .header-cta a { font-size: 12px; padding: 6px 12px; }
+      .header-logo-text { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="header-logo">
+        <div class="header-logo-icon">
+          <img src="TUNAG_for_UNION_logo.png" alt="TUNAG for UNION">
+        </div>
+        <div class="header-logo-text">
+          TUNAG for UNION
+          <span>運営アドバイザリー</span>
+        </div>
+      </a>
+      <div class="header-cta">
+        <a href="#contact" class="btn-outline">資料ダウンロード</a>
+        <a href="#contact" class="btn-primary">お問い合わせ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / FIRST VIEW -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">TUNAG for UNION</div>
+      <h1>組合運営の「参謀」が、<br><em>執行部の力になる。</em></h1>
+      <p class="hero-sub">
+        役員の入れ替わり、引き継ぎの不安、運営ノウハウの不足——<br>
+        組合運営経験者が、執行部に伴走して課題を解決します。
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="cta-main">お問い合わせはこちら →</a>
+        <a href="#contact" class="cta-sub">資料をダウンロード</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="section pain-section">
+    <div class="section-inner">
+      <p class="section-label">Problem</p>
+      <h2 class="section-title">こんなお悩みありませんか？</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon">🔄</div>
+          <div>
+            <h3>役員の入れ替わりで引き継ぎが不十分</h3>
+            <p>毎年の改選で運営ノウハウが途切れ、同じ課題が繰り返されてしまう。</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">🔍</div>
+          <div>
+            <h3>他組合の情報が入ってこない</h3>
+            <p>自分たちの運営が正しいのか、他の組合がどうしているのか分からない。</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">📋</div>
+          <div>
+            <h3>規約が形骸化している</h3>
+            <p>組合規約が実態と合わなくなっており、見直しの必要性を感じている。</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">🌱</div>
+          <div>
+            <h3>次世代の役員が育たない</h3>
+            <p>若手に組合運営を任せたいが、育成方法や仕組みづくりが分からない。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE OVERVIEW -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label">Service</p>
+      <h2 class="section-title">組合運営経験者が<br>「執行部の参謀」として伴走支援</h2>
+      <p class="section-desc">
+        TUNAG for UNION 運営アドバイザリーは、豊富な組合運営経験を持つ専門家が、
+        執行部の一員のように寄り添い、課題解決を支援するサービスです。
+      </p>
+      <div class="overview-pillars">
+        <div class="pillar-card">
+          <div class="pillar-num">1</div>
+          <h3>執行委員会・三役会への<br>定期参加</h3>
+          <p>会議に同席し、議論の進め方や意思決定をサポート。客観的な視点で運営の質を高めます。</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-num">2</div>
+          <h3>委員長・副委員長との<br>個別面談</h3>
+          <p>個別の悩みや課題に対する助言・相談対応。役職者のサポーターとして伴走します。</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-num">3</div>
+          <h3>組合運営全般の<br>アドバイス提供</h3>
+          <p>350組合以上の支援実績に基づく実践的なノウハウを共有。業界のベストプラクティスを提供します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <div class="mid-cta">
+    <div class="mid-cta-inner">
+      <p>まずはお気軽にご相談ください</p>
+      <div class="mid-cta-buttons">
+        <a href="#contact" class="btn-primary">お問い合わせ</a>
+        <a href="#contact" class="btn-outline">資料ダウンロード</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUPPORT AREAS -->
+  <section class="section support-section">
+    <div class="section-inner">
+      <p class="section-label">Support</p>
+      <h2 class="section-title">6つの支援領域</h2>
+      <p class="section-desc">組合運営のあらゆる場面で、実践的なサポートを提供します。</p>
+      <div class="support-grid">
+        <div class="support-card">
+          <div class="support-card-icon">🗣️</div>
+          <h3>会議運営サポート</h3>
+          <p>執行委員会や三役会に定期参加し、議論の整理・進行支援、意思決定の質を高めるサポートを行います。</p>
+        </div>
+        <div class="support-card">
+          <div class="support-card-icon">🎯</div>
+          <h3>ビジョン策定支援</h3>
+          <p>組合の中長期的な方針やビジョンの策定を支援。組合員に伝わるメッセージづくりをお手伝いします。</p>
+        </div>
+        <div class="support-card">
+          <div class="support-card-icon">💰</div>
+          <h3>資金使途見直し</h3>
+          <p>組合費の使い方を見直し、効果的な予算配分を提案。組合員への説明責任にも対応します。</p>
+        </div>
+        <div class="support-card">
+          <div class="support-card-icon">📝</div>
+          <h3>規約整備</h3>
+          <p>形骸化した規約の見直し・整備を支援。実態に即した規約への改定をサポートします。</p>
+        </div>
+        <div class="support-card">
+          <div class="support-card-icon">👥</div>
+          <h3>役員育成</h3>
+          <p>次世代リーダーの育成プランを策定。OJTでの成長支援やメンタリングを行います。</p>
+        </div>
+        <div class="support-card">
+          <div class="support-card-icon">💬</div>
+          <h3>個別課題相談</h3>
+          <p>日常の運営で生じるあらゆる課題に対し、経験に基づいたアドバイスを随時提供します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label">Flow</p>
+      <h2 class="section-title">ご支援の流れ</h2>
+      <p class="section-desc">お問い合わせから支援開始まで、丁寧にサポートいたします。</p>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-step-marker">
+            <div class="flow-step-num">1</div>
+            <div class="flow-step-line"></div>
+          </div>
+          <div class="flow-step-content">
+            <h3>ヒアリング</h3>
+            <p>現在の組合運営の状況や課題をじっくりお伺いします。組織体制、運営のお困りごと、目指す姿などを整理します。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-marker">
+            <div class="flow-step-num">2</div>
+            <div class="flow-step-line"></div>
+          </div>
+          <div class="flow-step-content">
+            <h3>支援プラン策定</h3>
+            <p>ヒアリングをもとに、貴組合に最適な支援プランをご提案。優先課題と具体的な支援内容をすり合わせます。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-marker">
+            <div class="flow-step-num">3</div>
+            <div class="flow-step-line"></div>
+          </div>
+          <div class="flow-step-content">
+            <h3>支援開始</h3>
+            <p>プランに基づき、会議参加・個別面談・アドバイス提供を開始。伴走型で日々の運営をサポートします。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-marker">
+            <div class="flow-step-num">4</div>
+            <div class="flow-step-line"></div>
+          </div>
+          <div class="flow-step-content">
+            <h3>定期振り返り</h3>
+            <p>定期的に支援内容を振り返り、成果と次のステップを確認。継続的な改善サイクルを回します。</p>
+          </div>
+        </div>
+      </div>
+      <div class="monthly-cycle">
+        <h3>月次サポートサイクル</h3>
+        <div class="cycle-items">
+          <div class="cycle-item">
+            <div class="cycle-item-icon">📅</div>
+            <h4>月1〜2回の会議参加</h4>
+            <p>執行委員会・三役会に同席し、運営をサポート</p>
+          </div>
+          <div class="cycle-item">
+            <div class="cycle-item-icon">🤝</div>
+            <h4>随時の個別面談</h4>
+            <p>委員長・副委員長の相談に柔軟に対応</p>
+          </div>
+          <div class="cycle-item">
+            <div class="cycle-item-icon">📄</div>
+            <h4>資料作成支援</h4>
+            <p>議案書や報告資料の作成をお手伝い</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <div class="mid-cta">
+    <div class="mid-cta-inner">
+      <p>組合運営のお悩み、まずはご相談ください</p>
+      <div class="mid-cta-buttons">
+        <a href="#contact" class="btn-primary">お問い合わせ</a>
+        <a href="#contact" class="btn-outline">資料ダウンロード</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- REASONS -->
+  <section class="section reasons-section">
+    <div class="section-inner">
+      <p class="section-label">Why Us</p>
+      <h2 class="section-title">TUNAG for UNION が選ばれる理由</h2>
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <div class="reason-number">350<span style="font-size:28px;">+</span></div>
+          <div class="reason-unit">組合以上の導入実績</div>
+          <h3>豊富な実績</h3>
+          <p>多種多様な業界・規模の労働組合への支援実績。貴組合に合った最適解を導きます。</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-number" style="font-size:36px;">経験者</div>
+          <div class="reason-unit">労組役員経験者が在籍</div>
+          <h3>現場を知るプロ</h3>
+          <p>実際に組合運営を経験した専門家が支援。机上の空論ではなく、現場に寄り添った助言を提供。</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-number" style="font-size:28px;">SaaS ×<br>伴走</div>
+          <div class="reason-unit">テクノロジーと人の力</div>
+          <h3>独自の支援モデル</h3>
+          <p>TUNAGの組合向けSaaS機能と、経験者による伴走支援を組み合わせた唯一無二のモデル。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label">Pricing</p>
+      <h2 class="section-title" style="text-align:center;">料金体系</h2>
+      <p class="section-desc" style="text-align:center; margin-left:auto; margin-right:auto;">
+        貴組合の課題や規模に合わせて、最適なプランをご提案いたします。
+      </p>
+      <div class="pricing-box">
+        <div class="pricing-header">
+          <h3>運営アドバイザリー</h3>
+        </div>
+        <div class="pricing-body">
+          <div class="pricing-amount">
+            <span>月額</span> 10<span>万円〜</span>
+          </div>
+          <p class="pricing-note">（税別）/ 契約期間 3ヶ月〜</p>
+          <div class="pricing-details">
+            <ul>
+              <li>執行委員会・三役会への定期参加（月1〜2回）</li>
+              <li>委員長・副委員長との個別面談（随時）</li>
+              <li>組合運営全般に関するアドバイス提供</li>
+              <li>議案書・報告資料の作成支援</li>
+            </ul>
+          </div>
+          <div class="pricing-merit">
+            <p>
+              <strong>TUNAG for UNIONとの併用で、さらに効果的に。</strong><br>
+              組合管理SaaS「TUNAG」と組み合わせることで、情報共有・組合員エンゲージメント向上を同時に実現できます。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="section-inner">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title" style="text-align:center;">よくあるご質問</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            TUNAGを導入していなくても利用できますか？
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、TUNAG for UNIONの運営アドバイザリーは、TUNAGの導入有無に関わらずご利用いただけます。組合運営に課題を感じている全ての労働組合にご活用いただけるサービスです。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            どのような方が支援してくれるのですか？
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">実際に労働組合の役員経験を持つ専門家が担当します。350組合以上の支援実績から培ったノウハウと、実体験に基づいたアドバイスを提供いたします。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            契約期間はどのくらいですか？
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">最短3ヶ月からご契約いただけます。組合運営の改善サイクルに合わせ、最適な期間をご提案いたします。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            オンラインでの支援にも対応していますか？
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、オンラインでの会議参加や面談にも対応しております。全国どこからでもご利用いただけます。対面とオンラインを組み合わせた柔軟な支援形態も可能です。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            支援内容は途中で変更できますか？
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、定期的な振り返りを通じて支援内容を柔軟に調整します。組合運営の状況や課題の変化に合わせて、最適なサポートを継続的にご提供いたします。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FOOTER -->
+  <section class="section cta-section" id="contact">
+    <div class="section-inner">
+      <h2 class="section-title">組合運営のお悩み、<br>まずはお気軽にご相談ください。</h2>
+      <p>貴組合の課題に合わせた最適な支援プランをご提案いたします。</p>
+      <div class="cta-buttons">
+        <a href="#" class="cta-main">お問い合わせはこちら →</a>
+        <a href="#" class="cta-sub">資料をダウンロード</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>TUNAG for UNION</h3>
+          <p>労働組合の運営課題を解決する、<br>SaaS×伴走支援サービス</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>サービス</h4>
+            <ul>
+              <li><a href="#">TUNAG for UNION（アプリ）</a></li>
+              <li><a href="#">運営アドバイザリー</a></li>
+              <li><a href="#">カスタムセミナー</a></li>
+              <li><a href="#">書記代行</a></li>
+              <li><a href="#">コミュニティ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>会社情報</h4>
+            <ul>
+              <li><a href="#">株式会社スタメン</a></li>
+              <li><a href="#">プライバシーポリシー</a></li>
+              <li><a href="#">特定商取引法に基づく表記</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Stamen, Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

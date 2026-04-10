@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カスタムセミナー | TUNAG for UNION</title>
+  <meta name="description" content="労働組合の研修会・学習会に最適なオーダーメイドセミナー。生成AI活用、ハラスメント対策、ライフプランなど多彩なテーマに対応。">
+  <meta property="og:title" content="カスタムセミナー | TUNAG for UNION">
+  <meta property="og:description" content="貴組合のニーズに合わせたオーダーメイドセミナーを提供。オンライン・オフライン対応。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://biz.tunag.jp/lp/union/seminar">
+  <link rel="icon" type="image/png" href="TUNAG_for_UNION_logo.png">
+  <link rel="apple-touch-icon" href="TUNAG_for_UNION_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #107bff;
+      --primary-dark: #283e59;
+      --primary-light: #7dc4ff;
+      --accent: #f44646;
+      --accent-hover: #d93636;
+      --bg-light: #f1f5f9;
+      --bg-white: #FFFFFF;
+      --text-main: #283e59;
+      --text-sub: #64748b;
+      --text-light: #94a3b8;
+      --border: #e2e8f0;
+      --section-gap: 80px;
+      --green: #1fb409;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text-main);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--primary-dark);
+    }
+    .header-logo-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .header-logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .header-logo-text {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .header-logo-text span {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-sub);
+    }
+    .header-cta {
+      display: flex;
+      gap: 10px;
+    }
+    .header-cta a {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-outline {
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border: 1.5px solid var(--primary);
+    }
+    .btn-primary:hover { background: #0a6ae6; border-color: #0a6ae6; }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 140px 24px 80px;
+      background: linear-gradient(135deg, #283e59 0%, #1e3a5f 50%, #1a4a7a 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -8%;
+      width: 480px;
+      height: 480px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -25%;
+      left: -5%;
+      width: 360px;
+      height: 360px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #7dc4ff;
+    }
+    .hero-sub {
+      font-size: 17px;
+      line-height: 1.8;
+      opacity: 0.9;
+      margin-bottom: 36px;
+      max-width: 640px;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .cta-main {
+      background: var(--accent);
+      color: #fff;
+    }
+    .cta-main:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(244,70,70,0.3); }
+    .cta-sub {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.3);
+    }
+    .cta-sub:hover { background: rgba(255,255,255,0.2); }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      padding: var(--section-gap) 24px;
+    }
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-sub);
+      margin-bottom: 48px;
+      max-width: 700px;
+    }
+
+    /* ===== PAIN POINTS ===== */
+    .pain-section { background: var(--bg-light); }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .pain-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s;
+    }
+    .pain-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .pain-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: #daeeff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .pain-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+    .pain-card p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* ===== SERVICE OVERVIEW ===== */
+    .overview-box {
+      background: var(--primary-dark);
+      border-radius: 16px;
+      padding: 48px;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+    .overview-box h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .overview-box p {
+      font-size: 16px;
+      line-height: 1.9;
+      opacity: 0.92;
+      max-width: 800px;
+    }
+    .overview-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .overview-feature {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .overview-feature:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .overview-feature-icon {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+    .overview-feature h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+    .overview-feature p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* ===== THEME CARDS ===== */
+    .theme-section { background: var(--bg-light); }
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .theme-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      transition: box-shadow 0.2s;
+    }
+    .theme-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .theme-card-icon {
+      width: 44px;
+      height: 44px;
+      background: #daeeff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+    .theme-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+    .theme-card p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+    .theme-note {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-sub);
+    }
+
+    /* ===== PRICING PLANS ===== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .pricing-card {
+      background: #fff;
+      border-radius: 16px;
+      border: 2px solid var(--border);
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .pricing-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .pricing-card.featured { border-color: var(--primary-dark); }
+    .pricing-card-header {
+      padding: 24px 28px;
+      text-align: center;
+      background: var(--bg-light);
+    }
+    .pricing-card.featured .pricing-card-header {
+      background: var(--primary-dark);
+      color: #fff;
+    }
+    .pricing-card-header h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .pricing-card-header p {
+      font-size: 13px;
+      opacity: 0.8;
+    }
+    .pricing-card-body {
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .pricing-price {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pricing-price span {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .pricing-tax {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+    .pricing-features {
+      text-align: left;
+      list-style: none;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+    .pricing-features li {
+      font-size: 14px;
+      padding: 7px 0;
+      color: var(--text-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .plan-comparison {
+      margin-top: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .plan-comparison table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .plan-comparison th,
+    .plan-comparison td {
+      padding: 14px 20px;
+      text-align: center;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .plan-comparison th {
+      background: var(--primary-dark);
+      color: #fff;
+      font-weight: 600;
+    }
+    .plan-comparison td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--text-main);
+      background: #FAFBFD;
+    }
+    .plan-comparison tr:last-child td { border-bottom: none; }
+    .check { color: var(--green); font-weight: 700; }
+    .option { color: var(--primary); font-size: 13px; }
+
+    /* ===== FLOW ===== */
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      position: relative;
+      padding-bottom: 40px;
+    }
+    .flow-step:last-child { padding-bottom: 0; }
+    .flow-step-marker {
+      flex-shrink: 0;
+      width: 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .flow-step-num {
+      width: 48px;
+      height: 48px;
+      background: var(--primary-dark);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+    }
+    .flow-step-line {
+      width: 2px;
+      flex: 1;
+      background: var(--border);
+      margin-top: 8px;
+    }
+    .flow-step:last-child .flow-step-line { display: none; }
+    .flow-step-content {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      border: 1px solid var(--border);
+      flex: 1;
+    }
+    .flow-step-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--primary-dark);
+    }
+    .flow-step-content p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+    .faq-question:hover { background: var(--bg-light); }
+    .faq-question::after {
+      content: '+';
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      font-size: 15px;
+      color: var(--text-sub);
+      line-height: 1.8;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, #2952a3 100%);
+      color: #fff;
+      text-align: center;
+    }
+    .cta-section .section-title { color: #fff; }
+    .cta-section p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 36px;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cta-buttons a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    /* ===== MID CTA ===== */
+    .mid-cta {
+      background: #daeeff;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .mid-cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .mid-cta p {
+      font-size: 16px;
+      color: var(--text-main);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .mid-cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .mid-cta-buttons a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #1e2d3d;
+      color: rgba(255,255,255,0.7);
+      padding: 60px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+    .footer-brand h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .footer-links h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero { padding: 120px 20px 60px; }
+      .hero h1 { font-size: 28px; }
+      .hero-sub { font-size: 15px; }
+      .hero-cta a { font-size: 14px; padding: 14px 24px; width: 100%; justify-content: center; }
+
+      .section { padding: 56px 20px; }
+      .section-title { font-size: 24px; }
+
+      .pain-grid { grid-template-columns: 1fr; }
+      .overview-features { grid-template-columns: 1fr; }
+      .overview-box { padding: 28px 20px; }
+      .theme-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+
+      .flow-step { flex-direction: column; gap: 12px; }
+      .flow-step-marker { flex-direction: row; width: auto; }
+      .flow-step-line { width: auto; height: 2px; flex: 1; margin-top: 0; margin-left: 8px; }
+
+      .plan-comparison { overflow-x: auto; }
+      .plan-comparison table { min-width: 480px; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-links { grid-template-columns: 1fr; }
+
+      .header-cta a { font-size: 12px; padding: 6px 12px; }
+      .header-logo-text { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="header-logo">
+        <div class="header-logo-icon">
+          <img src="TUNAG_for_UNION_logo.png" alt="TUNAG for UNION">
+        </div>
+        <div class="header-logo-text">
+          TUNAG for UNION
+          <span>カスタムセミナー</span>
+        </div>
+      </a>
+      <div class="header-cta">
+        <a href="#contact" class="btn-outline">資料ダウンロード</a>
+        <a href="#contact" class="btn-primary">お問い合わせ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / FIRST VIEW -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">TUNAG for UNION</div>
+      <h1>貴組合にぴったりの<br><em>オーダーメイドセミナー</em></h1>
+      <p class="hero-sub">
+        研修会・学習会のテーマ選びや講師探しにお困りではありませんか？<br>
+        貴組合のニーズに合わせた、完全カスタマイズのセミナーを提供します。
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="cta-main">お問い合わせはこちら →</a>
+        <a href="#contact" class="cta-sub">資料をダウンロード</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="section pain-section">
+    <div class="section-inner">
+      <p class="section-label">Problem</p>
+      <h2 class="section-title">こんなお悩みありませんか？</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon">😔</div>
+          <div>
+            <h3>毎年同じテーマでマンネリ化</h3>
+            <p>研修会の内容がワンパターンになり、組合員の関心が薄れてきている。</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">🔎</div>
+          <div>
+            <h3>良い講師がなかなか見つからない</h3>
+            <p>労働組合に詳しく、テーマに合った講師を探すのに毎回苦労している。</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">📉</div>
+          <div>
+            <h3>参加率が年々低下している</h3>
+            <p>組合員が「また同じ話か」と感じ、研修会への参加意欲が下がっている。</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">🤷</div>
+          <div>
+            <h3>企画の進め方が分からない</h3>
+            <p>教宣担当になったばかりで、研修会の企画・運営ノウハウがない。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE OVERVIEW -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label">Service</p>
+      <h2 class="section-title">カスタムセミナーとは</h2>
+      <p class="section-desc">
+        貴組合のニーズや課題に合わせて、テーマ・内容・形式をフルカスタマイズできるオーダーメイドセミナーです。
+      </p>
+      <div class="overview-box">
+        <h3>すべてのセミナーが「貴組合だけ」のために</h3>
+        <p>
+          一般的なパッケージ研修とは違い、貴組合の業種・規模・課題に合わせてテーマ選定から講師手配、
+          資料作成まで一貫してサポート。組合員にとって本当に役立つ学びの場を提供します。
+        </p>
+      </div>
+      <div class="overview-features">
+        <div class="overview-feature">
+          <div class="overview-feature-icon">🎨</div>
+          <h3>テーマ自由設計</h3>
+          <p>貴組合の課題に応じて最適なテーマを選定・カスタマイズ</p>
+        </div>
+        <div class="overview-feature">
+          <div class="overview-feature-icon">👨‍🏫</div>
+          <h3>最適な講師をマッチング</h3>
+          <p>テーマに精通した専門家・実務経験者を手配</p>
+        </div>
+        <div class="overview-feature">
+          <div class="overview-feature-icon">🌐</div>
+          <h3>オンライン・オフライン対応</h3>
+          <p>現地開催もZoom開催も柔軟に対応。ハイブリッド開催も可能</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <div class="mid-cta">
+    <div class="mid-cta-inner">
+      <p>セミナーの企画・テーマ選びのご相談もお気軽に</p>
+      <div class="mid-cta-buttons">
+        <a href="#contact" class="btn-primary">お問い合わせ</a>
+        <a href="#contact" class="btn-outline">資料ダウンロード</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- THEMES -->
+  <section class="section theme-section">
+    <div class="section-inner">
+      <p class="section-label">Themes</p>
+      <h2 class="section-title">セミナーテーマ例</h2>
+      <p class="section-desc">以下は一例です。貴組合のご要望に合わせて自由にカスタマイズいただけます。</p>
+      <div class="theme-grid">
+        <div class="theme-card">
+          <div class="theme-card-icon">🤖</div>
+          <h3>生成AI活用</h3>
+          <p>ChatGPTなどの生成AIを組合活動に活かす方法を実践的に学ぶセミナー。</p>
+        </div>
+        <div class="theme-card">
+          <div class="theme-card-icon">🛡️</div>
+          <h3>ハラスメント対策</h3>
+          <p>職場のハラスメント防止と対応策を、最新の法改正を踏まえて解説。</p>
+        </div>
+        <div class="theme-card">
+          <div class="theme-card-icon">💼</div>
+          <h3>ライフプラン</h3>
+          <p>組合員のライフステージに合わせた資産形成やキャリア設計をサポート。</p>
+        </div>
+        <div class="theme-card">
+          <div class="theme-card-icon">⚖️</div>
+          <h3>労働法基礎</h3>
+          <p>組合役員として知っておくべき労働法の基礎知識を分かりやすく解説。</p>
+        </div>
+        <div class="theme-card">
+          <div class="theme-card-icon">🗣️</div>
+          <h3>コミュニケーション研修</h3>
+          <p>組合活動に必要な対話力・ファシリテーションスキルを習得。</p>
+        </div>
+        <div class="theme-card">
+          <div class="theme-card-icon">📊</div>
+          <h3>組合運営スキルアップ</h3>
+          <p>会議運営、資料作成、合意形成など、組合活動の実務スキルを強化。</p>
+        </div>
+      </div>
+      <p class="theme-note">※ 上記以外のテーマにも対応可能です。お気軽にご相談ください。</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label">Pricing</p>
+      <h2 class="section-title" style="text-align:center;">料金プラン</h2>
+      <p class="section-desc" style="text-align:center; margin-left:auto; margin-right:auto;">
+        開催形式に合わせて2つのプランをご用意しています。
+      </p>
+      <div class="pricing-grid">
+        <div class="pricing-card featured">
+          <div class="pricing-card-header">
+            <h3>オフラインセミナー</h3>
+            <p>講師が現地に訪問</p>
+          </div>
+          <div class="pricing-card-body">
+            <div class="pricing-price">
+              <span>¥</span>250,000<span>〜</span>
+            </div>
+            <p class="pricing-tax">（税別）</p>
+            <ul class="pricing-features">
+              <li>講師が貴組合の会場に訪問</li>
+              <li>参加型ワークショップ対応</li>
+              <li>セミナー資料の作成・提供</li>
+              <li>事前打ち合わせ込み</li>
+              <li>質疑応答・ディスカッションタイム</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <h3>オンラインセミナー</h3>
+            <p>Zoom等で全国対応</p>
+          </div>
+          <div class="pricing-card-body">
+            <div class="pricing-price">
+              <span>¥</span>200,000<span>〜</span>
+            </div>
+            <p class="pricing-tax">（税別）</p>
+            <ul class="pricing-features">
+              <li>Zoom等のオンラインツールで実施</li>
+              <li>全国どこからでも参加可能</li>
+              <li>録画アーカイブ提供可</li>
+              <li>セミナー資料の作成・提供</li>
+              <li>事前打ち合わせ込み</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPARISON TABLE -->
+      <div class="plan-comparison">
+        <table>
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th>オフライン</th>
+              <th>オンライン</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>講師派遣</td>
+              <td class="check">◯</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>ワークショップ形式</td>
+              <td class="check">◯</td>
+              <td class="option">オプション</td>
+            </tr>
+            <tr>
+              <td>録画アーカイブ</td>
+              <td class="option">オプション</td>
+              <td class="check">◯</td>
+            </tr>
+            <tr>
+              <td>セミナー資料</td>
+              <td class="check">◯</td>
+              <td class="check">◯</td>
+            </tr>
+            <tr>
+              <td>事前打ち合わせ</td>
+              <td class="check">◯</td>
+              <td class="check">◯</td>
+            </tr>
+            <tr>
+              <td>全国対応</td>
+              <td class="option">要相談</td>
+              <td class="check">◯</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="section-inner">
+      <p class="section-label">Flow</p>
+      <h2 class="section-title">開催までの流れ</h2>
+      <p class="section-desc">お問い合わせからセミナー開催まで、丁寧にサポートいたします。</p>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-step-marker">
+            <div class="flow-step-num">1</div>
+            <div class="flow-step-line"></div>
+          </div>
+          <div class="flow-step-content">
+            <h3>お問い合わせ・ヒアリング</h3>
+            <p>まずはお気軽にお問い合わせください。貴組合の課題やご要望、参加者層、開催時期などをヒアリングします。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-marker">
+            <div class="flow-step-num">2</div>
+            <div class="flow-step-line"></div>
+          </div>
+          <div class="flow-step-content">
+            <h3>テーマ・内容の決定</h3>
+            <p>ヒアリングを基に、最適なテーマと内容をご提案。貴組合のご要望に合わせてカスタマイズします。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-marker">
+            <div class="flow-step-num">3</div>
+            <div class="flow-step-line"></div>
+          </div>
+          <div class="flow-step-content">
+            <h3>講師手配・資料作成</h3>
+            <p>テーマに最適な講師をマッチング。セミナー資料の作成も一貫してサポートいたします。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-marker">
+            <div class="flow-step-num">4</div>
+            <div class="flow-step-line"></div>
+          </div>
+          <div class="flow-step-content">
+            <h3>セミナー開催</h3>
+            <p>当日の運営サポートもお任せください。オンラインの場合はアーカイブ配信にも対応します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <div class="mid-cta">
+    <div class="mid-cta-inner">
+      <p>研修会・学習会のご相談はお気軽に</p>
+      <div class="mid-cta-buttons">
+        <a href="#contact" class="btn-primary">お問い合わせ</a>
+        <a href="#contact" class="btn-outline">資料ダウンロード</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title" style="text-align:center;">よくあるご質問</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            セミナーのテーマは自由に選べますか？
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、テーマは完全に自由に設定いただけます。掲載しているテーマ例以外にも、貴組合の課題やご要望に合わせてカスタマイズいたします。まずはご相談ください。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            参加人数に制限はありますか？
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">特に人数制限はありません。少人数のワークショップ形式から、数百名規模の講演まで対応可能です。参加人数に応じて最適な形式をご提案いたします。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            開催までどのくらいの準備期間が必要ですか？
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">通常、お問い合わせから開催まで1〜2ヶ月程度の準備期間をいただいております。テーマや講師の手配状況によって変動しますので、まずはお早めにご相談ください。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            オンラインとオフラインのハイブリッド開催は可能ですか？
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、ハイブリッド開催にも対応しております。現地参加とオンライン参加を併用することで、全国の組合員が参加しやすい環境を整えることができます。</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            TUNAGを導入していなくても利用できますか？
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、カスタムセミナーはTUNAGの導入有無に関わらずご利用いただけます。セミナー単体でのご依頼も大歓迎です。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FOOTER -->
+  <section class="section cta-section" id="contact">
+    <div class="section-inner">
+      <h2 class="section-title">研修会・学習会のお悩み、<br>まずはお気軽にご相談ください。</h2>
+      <p>テーマ選定から講師手配、当日運営まで一貫してサポートいたします。</p>
+      <div class="cta-buttons">
+        <a href="#" class="cta-main">お問い合わせはこちら →</a>
+        <a href="#" class="cta-sub">資料をダウンロード</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>TUNAG for UNION</h3>
+          <p>労働組合の運営課題を解決する、<br>SaaS×伴走支援サービス</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>サービス</h4>
+            <ul>
+              <li><a href="#">TUNAG for UNION（アプリ）</a></li>
+              <li><a href="#">運営アドバイザリー</a></li>
+              <li><a href="#">カスタムセミナー</a></li>
+              <li><a href="#">書記代行</a></li>
+              <li><a href="#">コミュニティ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>会社情報</h4>
+            <ul>
+              <li><a href="#">株式会社スタメン</a></li>
+              <li><a href="#">プライバシーポリシー</a></li>
+              <li><a href="#">特定商取引法に基づく表記</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Stamen, Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
