@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>運営アドバイザリー | TUNAG for UNION</title>
-  <meta name="description" content="労働組合の執行部運営を、組合運営経験者が「参謀」として伴走支援。350組合以上の実績を持つTUNAG for UNIONの運営アドバイザリーサービス。">
-  <meta property="og:title" content="運営アドバイザリー | TUNAG for UNION">
+  <title>アドバイザリー | TUNAG for UNION</title>
+  <meta name="description" content="労働組合の執行部運営を、組合運営経験者が「参謀」として伴走支援。350組合以上の実績を持つTUNAG for UNIONのアドバイザリーサービス。">
+  <meta property="og:title" content="アドバイザリー | TUNAG for UNION">
   <meta property="og:description" content="労働組合の執行部運営を、組合運営経験者が「参謀」として伴走支援するアドバイザリーサービス。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://biz.tunag.jp/lp/union/advisory">
@@ -49,10 +49,10 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(8px);
+      background: #ffffff;
       z-index: 100;
       border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     }
     .header-inner {
       max-width: 1100px;
@@ -65,33 +65,12 @@
     .header-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
       text-decoration: none;
-      color: var(--primary);
     }
-    .header-logo-icon {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .header-logo-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .header-logo-text {
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-    .header-logo-text span {
+    .header-logo img {
+      height: 42px;
+      width: auto;
       display: block;
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--text-sub);
     }
     .header-cta {
       display: flex;
@@ -151,6 +130,23 @@
       margin: 0 auto;
       position: relative;
       z-index: 1;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .hero-text { min-width: 0; }
+    .hero-image {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
+      transform: translateY(0);
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
     .hero-badge {
       display: inline-block;
@@ -248,24 +244,28 @@
     .pain-card {
       background: #fff;
       border-radius: 12px;
-      padding: 28px 24px;
+      padding: 24px;
       display: flex;
-      align-items: flex-start;
-      gap: 16px;
+      align-items: center;
+      gap: 20px;
       border: 1px solid var(--border);
       transition: box-shadow 0.2s;
     }
     .pain-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .pain-card-body { flex: 1; min-width: 0; }
     .pain-icon {
       flex-shrink: 0;
-      width: 48px;
-      height: 48px;
+      width: 110px;
+      height: 110px;
+      border-radius: 12px;
+      overflow: hidden;
       background: #daeeff;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
+    }
+    .pain-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .pain-card h3 {
       font-size: 16px;
@@ -346,22 +346,28 @@
     .support-card {
       background: #fff;
       border-radius: 12px;
-      padding: 32px 24px;
       border: 1px solid var(--border);
       border-top: 4px solid var(--primary-dark);
-      transition: box-shadow 0.2s;
-    }
-    .support-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-    .support-card-icon {
-      width: 44px;
-      height: 44px;
-      background: #daeeff;
-      border-radius: 10px;
+      transition: box-shadow 0.2s, transform 0.2s;
+      overflow: hidden;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      margin-bottom: 16px;
+      flex-direction: column;
+    }
+    .support-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .support-card-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #daeeff;
+    }
+    .support-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .support-card-body {
+      padding: 22px 22px 26px;
     }
     .support-card h3 {
       font-size: 17px;
@@ -458,11 +464,26 @@
     .cycle-item {
       background: #fff;
       border-radius: 10px;
-      padding: 20px;
+      padding: 24px 20px;
       text-align: center;
       border: 1px solid var(--border);
     }
-    .cycle-item-icon { font-size: 28px; margin-bottom: 10px; }
+    .cycle-item-icon {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #daeeff;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(16,123,255,0.12);
+    }
+    .cycle-item-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
     .cycle-item h4 {
       font-size: 15px;
       font-weight: 700;
@@ -765,16 +786,24 @@
     }
 
     /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
     @media (max-width: 768px) {
       .hero { padding: 120px 20px 60px; }
       .hero h1 { font-size: 28px; }
       .hero-sub { font-size: 15px; }
       .hero-cta a { font-size: 14px; padding: 14px 24px; width: 100%; justify-content: center; }
+      .hero-image { margin-top: 8px; }
 
       .section { padding: 56px 20px; }
       .section-title { font-size: 24px; }
 
       .pain-grid { grid-template-columns: 1fr; }
+      .pain-icon { width: 90px; height: 90px; }
       .overview-pillars { grid-template-columns: 1fr; }
       .overview-content { padding: 28px 20px; }
       .support-grid { grid-template-columns: 1fr; }
@@ -792,7 +821,7 @@
       .footer-links { grid-template-columns: 1fr; }
 
       .header-cta a { font-size: 12px; padding: 6px 12px; }
-      .header-logo-text { font-size: 12px; }
+      .header-logo img { height: 32px; }
     }
   </style>
 </head>
@@ -801,13 +830,7 @@
   <header class="header">
     <div class="header-inner">
       <a href="#" class="header-logo">
-        <div class="header-logo-icon">
-          <img src="TUNAG_for_UNION_logo.png" alt="TUNAG for UNION">
-        </div>
-        <div class="header-logo-text">
-          TUNAG for UNION
-          <span>運営アドバイザリー</span>
-        </div>
+        <img src="tunag_for_union_advisory.png" alt="TUNAG for UNION アドバイザリー">
       </a>
       <div class="header-cta">
         <a href="#contact" class="btn-outline">資料ダウンロード</a>
@@ -819,15 +842,20 @@
   <!-- HERO / FIRST VIEW -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">TUNAG for UNION</div>
-      <h1>組合運営の「参謀」が、<br><em>執行部の力になる。</em></h1>
-      <p class="hero-sub">
-        役員の入れ替わり、引き継ぎの不安、運営ノウハウの不足——<br>
-        組合運営経験者が、執行部に伴走して課題を解決します。
-      </p>
-      <div class="hero-cta">
-        <a href="#contact" class="cta-main">お問い合わせはこちら →</a>
-        <a href="#contact" class="cta-sub">資料をダウンロード</a>
+      <div class="hero-text">
+        <div class="hero-badge">TUNAG for UNION</div>
+        <h1>組合運営の「参謀」が、<br><em>執行部の力になる。</em></h1>
+        <p class="hero-sub">
+          役員の入れ替わり、引き継ぎの不安、運営ノウハウの不足——<br>
+          組合運営経験者が、執行部に伴走して課題を解決します。
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="cta-main">お問い合わせはこちら →</a>
+          <a href="#contact" class="cta-sub">資料をダウンロード</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="advisory_top.png" alt="労働組合の執行部運営を伴走支援するアドバイザリーサービス">
       </div>
     </div>
   </section>
@@ -839,29 +867,37 @@
       <h2 class="section-title">こんなお悩みありませんか？</h2>
       <div class="pain-grid">
         <div class="pain-card">
-          <div class="pain-icon">🔄</div>
-          <div>
+          <div class="pain-icon">
+            <img src="advisory_1-1.jpg" alt="役員の入れ替わりで引き継ぎが不十分">
+          </div>
+          <div class="pain-card-body">
             <h3>役員の入れ替わりで引き継ぎが不十分</h3>
             <p>毎年の改選で運営ノウハウが途切れ、同じ課題が繰り返されてしまう。</p>
           </div>
         </div>
         <div class="pain-card">
-          <div class="pain-icon">🔍</div>
-          <div>
+          <div class="pain-icon">
+            <img src="advisory_1-2.jpg" alt="他組合の情報が入ってこない">
+          </div>
+          <div class="pain-card-body">
             <h3>他組合の情報が入ってこない</h3>
             <p>自分たちの運営が正しいのか、他の組合がどうしているのか分からない。</p>
           </div>
         </div>
         <div class="pain-card">
-          <div class="pain-icon">📋</div>
-          <div>
+          <div class="pain-icon">
+            <img src="advisory_1-3.jpg" alt="規約が形骸化している">
+          </div>
+          <div class="pain-card-body">
             <h3>規約が形骸化している</h3>
             <p>組合規約が実態と合わなくなっており、見直しの必要性を感じている。</p>
           </div>
         </div>
         <div class="pain-card">
-          <div class="pain-icon">🌱</div>
-          <div>
+          <div class="pain-icon">
+            <img src="advisory_1-4.jpg" alt="次世代の役員が育たない">
+          </div>
+          <div class="pain-card-body">
             <h3>次世代の役員が育たない</h3>
             <p>若手に組合運営を任せたいが、育成方法や仕組みづくりが分からない。</p>
           </div>
@@ -876,7 +912,7 @@
       <p class="section-label">Service</p>
       <h2 class="section-title">組合運営経験者が<br>「執行部の参謀」として伴走支援</h2>
       <p class="section-desc">
-        TUNAG for UNION 運営アドバイザリーは、豊富な組合運営経験を持つ専門家が、
+        TUNAG for UNION アドバイザリーは、豊富な組合運営経験を持つ専門家が、
         執行部の一員のように寄り添い、課題解決を支援するサービスです。
       </p>
       <div class="overview-pillars">
@@ -918,34 +954,58 @@
       <p class="section-desc">組合運営のあらゆる場面で、実践的なサポートを提供します。</p>
       <div class="support-grid">
         <div class="support-card">
-          <div class="support-card-icon">🗣️</div>
-          <h3>会議運営サポート</h3>
-          <p>執行委員会や三役会に定期参加し、議論の整理・進行支援、意思決定の質を高めるサポートを行います。</p>
+          <div class="support-card-image">
+            <img src="advisory_2-1.png" alt="会議運営サポート">
+          </div>
+          <div class="support-card-body">
+            <h3>会議運営サポート</h3>
+            <p>執行委員会や三役会に定期参加し、議論の整理・進行支援、意思決定の質を高めるサポートを行います。</p>
+          </div>
         </div>
         <div class="support-card">
-          <div class="support-card-icon">🎯</div>
-          <h3>ビジョン策定支援</h3>
-          <p>組合の中長期的な方針やビジョンの策定を支援。組合員に伝わるメッセージづくりをお手伝いします。</p>
+          <div class="support-card-image">
+            <img src="advisory_2-2.png" alt="ビジョン策定支援">
+          </div>
+          <div class="support-card-body">
+            <h3>ビジョン策定支援</h3>
+            <p>組合の中長期的な方針やビジョンの策定を支援。組合員に伝わるメッセージづくりをお手伝いします。</p>
+          </div>
         </div>
         <div class="support-card">
-          <div class="support-card-icon">💰</div>
-          <h3>資金使途見直し</h3>
-          <p>組合費の使い方を見直し、効果的な予算配分を提案。組合員への説明責任にも対応します。</p>
+          <div class="support-card-image">
+            <img src="advisory_2-3.png" alt="資金使途見直し">
+          </div>
+          <div class="support-card-body">
+            <h3>資金使途見直し</h3>
+            <p>組合費の使い方を見直し、効果的な予算配分を提案。組合員への説明責任にも対応します。</p>
+          </div>
         </div>
         <div class="support-card">
-          <div class="support-card-icon">📝</div>
-          <h3>規約整備</h3>
-          <p>形骸化した規約の見直し・整備を支援。実態に即した規約への改定をサポートします。</p>
+          <div class="support-card-image">
+            <img src="advisory_2-4.png" alt="規約整備">
+          </div>
+          <div class="support-card-body">
+            <h3>規約整備</h3>
+            <p>形骸化した規約の見直し・整備を支援。実態に即した規約への改定をサポートします。</p>
+          </div>
         </div>
         <div class="support-card">
-          <div class="support-card-icon">👥</div>
-          <h3>役員育成</h3>
-          <p>次世代リーダーの育成プランを策定。OJTでの成長支援やメンタリングを行います。</p>
+          <div class="support-card-image">
+            <img src="advisory_2-5.png" alt="役員育成">
+          </div>
+          <div class="support-card-body">
+            <h3>役員育成</h3>
+            <p>次世代リーダーの育成プランを策定。OJTでの成長支援やメンタリングを行います。</p>
+          </div>
         </div>
         <div class="support-card">
-          <div class="support-card-icon">💬</div>
-          <h3>個別課題相談</h3>
-          <p>日常の運営で生じるあらゆる課題に対し、経験に基づいたアドバイスを随時提供します。</p>
+          <div class="support-card-image">
+            <img src="advisory_2-6.png" alt="個別課題相談">
+          </div>
+          <div class="support-card-body">
+            <h3>個別課題相談</h3>
+            <p>日常の運営で生じるあらゆる課題に対し、経験に基づいたアドバイスを随時提供します。</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1003,17 +1063,23 @@
         <h3>月次サポートサイクル</h3>
         <div class="cycle-items">
           <div class="cycle-item">
-            <div class="cycle-item-icon">📅</div>
+            <div class="cycle-item-icon">
+              <img src="advisory_meeting.jpg" alt="月1〜2回の会議参加">
+            </div>
             <h4>月1〜2回の会議参加</h4>
             <p>執行委員会・三役会に同席し、運営をサポート</p>
           </div>
           <div class="cycle-item">
-            <div class="cycle-item-icon">🤝</div>
+            <div class="cycle-item-icon">
+              <img src="advisory_individual.jpg" alt="随時の個別面談">
+            </div>
             <h4>随時の個別面談</h4>
             <p>委員長・副委員長の相談に柔軟に対応</p>
           </div>
           <div class="cycle-item">
-            <div class="cycle-item-icon">📄</div>
+            <div class="cycle-item-icon">
+              <img src="advisory_material.jpg" alt="資料作成支援">
+            </div>
             <h4>資料作成支援</h4>
             <p>議案書や報告資料の作成をお手伝い</p>
           </div>
@@ -1071,7 +1137,7 @@
       </p>
       <div class="pricing-box">
         <div class="pricing-header">
-          <h3>運営アドバイザリー</h3>
+          <h3>アドバイザリー</h3>
         </div>
         <div class="pricing-body">
           <div class="pricing-amount">
@@ -1108,7 +1174,7 @@
             TUNAGを導入していなくても利用できますか？
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">はい、TUNAG for UNIONの運営アドバイザリーは、TUNAGの導入有無に関わらずご利用いただけます。組合運営に課題を感じている全ての労働組合にご活用いただけるサービスです。</div>
+            <div class="faq-answer-inner">はい、TUNAG for UNIONのアドバイザリーは、TUNAGの導入有無に関わらずご利用いただけます。組合運営に課題を感じている全ての労働組合にご活用いただけるサービスです。</div>
           </div>
         </div>
         <div class="faq-item">
@@ -1172,7 +1238,7 @@
             <h4>サービス</h4>
             <ul>
               <li><a href="#">TUNAG for UNION（アプリ）</a></li>
-              <li><a href="#">運営アドバイザリー</a></li>
+              <li><a href="#">アドバイザリー</a></li>
               <li><a href="#">カスタムセミナー</a></li>
               <li><a href="#">書記代行</a></li>
               <li><a href="#">コミュニティ</a></li>
