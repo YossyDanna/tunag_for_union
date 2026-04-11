@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メッセージ | TUNAG for UNION</title>
+  <meta name="description" content="株式会社スタメン 専門役員 Union Solution Strategist より、労働組合のパートナーとして伴走する想いをお伝えします。">
+  <meta property="og:title" content="メッセージ | TUNAG for UNION">
+  <meta property="og:description" content="組合の未来を、ともにつくる。労働組合のパートナーとして伴走する想いをお伝えします。">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="TUNAG_for_UNION_logo.png">
+  <link rel="apple-touch-icon" href="TUNAG_for_UNION_logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #107bff;
+      --primary-dark: #283e59;
+      --primary-light: #7dc4ff;
+      --accent: #f44646;
+      --accent-hover: #d93636;
+      --bg-light: #f1f5f9;
+      --bg-white: #FFFFFF;
+      --text-main: #283e59;
+      --text-sub: #64748b;
+      --text-light: #94a3b8;
+      --border: #e2e8f0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text-main);
+      line-height: 1.9;
+      -webkit-font-smoothing: antialiased;
+      background: var(--bg-light);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .header-logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .header-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text-sub);
+      transition: all 0.2s;
+    }
+    .header-back:hover {
+      color: var(--primary);
+      background: var(--bg-light);
+    }
+    .header-cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      background: var(--accent);
+      color: #fff;
+      border: 1.5px solid var(--accent);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .header-cta-button:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(244,70,70,0.25);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 140px 24px 60px;
+      background: linear-gradient(135deg, #283e59 0%, #1e3a5f 50%, #1a4a7a 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -25%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .hero-label {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.5;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    .hero h1 span {
+      display: block;
+      color: #7dc4ff;
+      font-size: 44px;
+      margin-top: 6px;
+    }
+    .hero-sub {
+      font-size: 15px;
+      opacity: 0.85;
+      letter-spacing: 1px;
+    }
+
+    /* ===== MAIN ===== */
+    .main {
+      padding: 80px 24px 100px;
+    }
+    .main-inner {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    /* ===== PROFILE ===== */
+    .profile {
+      background: #fff;
+      border-radius: 16px;
+      padding: 48px;
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: 0 4px 24px rgba(40,62,89,0.06);
+      border: 1px solid var(--border);
+    }
+    .profile-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--bg-light);
+      border: 4px solid #fff;
+      box-shadow: 0 8px 24px rgba(16,123,255,0.15);
+      flex-shrink: 0;
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .profile-info {
+      min-width: 0;
+    }
+    .profile-company {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .profile-role {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .profile-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    .profile-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.2;
+    }
+    .profile-name-en {
+      display: block;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 1px;
+      margin-top: 6px;
+    }
+
+    /* ===== MESSAGE ===== */
+    .message-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 64px 64px 72px;
+      box-shadow: 0 4px 24px rgba(40,62,89,0.06);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    .message-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 48px;
+      right: 48px;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--primary-light));
+      border-radius: 0 0 4px 4px;
+    }
+    .message-body p {
+      font-size: 16px;
+      line-height: 2.1;
+      color: var(--text-main);
+      margin-bottom: 1.6em;
+    }
+    .message-body p:last-child {
+      margin-bottom: 0;
+    }
+    .message-body .quote {
+      font-family: 'Noto Serif JP', serif;
+      color: var(--primary);
+      font-weight: 500;
+      font-style: italic;
+      padding-left: 1em;
+      border-left: 3px solid var(--primary-light);
+      margin-left: 0.5em;
+    }
+    .message-closing {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px dashed var(--border);
+    }
+    .message-closing-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: 2px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    .message-closing-text::before,
+    .message-closing-text::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 30px;
+      height: 1px;
+      background: var(--primary-light);
+    }
+    .message-closing-text::before { left: -50px; }
+    .message-closing-text::after { right: -50px; }
+    .message-closing-note {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.9;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: linear-gradient(135deg, #283e59 0%, #1e3a5f 50%, #1a4a7a 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -5%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-inner h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .cta-inner p {
+      font-size: 15px;
+      opacity: 0.9;
+      margin-bottom: 36px;
+    }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 18px 44px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .cta-button:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(244,70,70,0.3);
+    }
+
+    /* ===== FORM SECTION ===== */
+    .form-section {
+      padding: 80px 24px 100px;
+      background: var(--bg-light);
+      scroll-margin-top: 72px;
+    }
+    .form-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .form-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .form-header .form-label {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+    .form-header h2 {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    .form-header p {
+      font-size: 15px;
+      color: var(--text-sub);
+      line-height: 1.8;
+    }
+    .contact-form {
+      background: #fff;
+      border-radius: 16px;
+      padding: 56px 56px 48px;
+      box-shadow: 0 4px 24px rgba(40,62,89,0.06);
+      border: 1px solid var(--border);
+    }
+    .form-field {
+      margin-bottom: 24px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .form-row .form-field {
+      margin-bottom: 0;
+    }
+    .form-field label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+    .form-field .required,
+    .form-field .optional {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    .form-field .required {
+      background: var(--accent);
+      color: #fff;
+    }
+    .form-field .optional {
+      background: var(--bg-light);
+      color: var(--text-sub);
+      border: 1px solid var(--border);
+    }
+    .form-field input[type="text"],
+    .form-field input[type="email"],
+    .form-field input[type="tel"],
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--text-main);
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-field input[type="text"]:hover,
+    .form-field input[type="email"]:hover,
+    .form-field input[type="tel"]:hover,
+    .form-field select:hover,
+    .form-field textarea:hover {
+      border-color: var(--primary-light);
+    }
+    .form-field input[type="text"]:focus,
+    .form-field input[type="email"]:focus,
+    .form-field input[type="tel"]:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(16,123,255,0.12);
+    }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: var(--text-light);
+    }
+    .form-field select {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3e%3cpath d='M6 8L0 0h12z' fill='%2364748b'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 18px center;
+      padding-right: 44px;
+      cursor: pointer;
+    }
+    .form-field textarea {
+      min-height: 140px;
+      resize: vertical;
+      line-height: 1.7;
+    }
+    .form-submit {
+      margin-top: 12px;
+      text-align: center;
+    }
+    .form-submit button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 280px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 18px 44px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .form-submit button:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(244,70,70,0.3);
+    }
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 20px;
+      line-height: 1.8;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #1e2d3d;
+      color: rgba(255,255,255,0.7);
+      padding: 60px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+    .footer-brand h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .footer-links h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero { padding: 120px 20px 48px; }
+      .hero h1 { font-size: 28px; letter-spacing: 1px; }
+      .hero h1 span { font-size: 30px; }
+      .hero-label { font-size: 12px; }
+      .hero-sub { font-size: 13px; }
+
+      .main { padding: 56px 20px 72px; }
+
+      .profile {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+        gap: 24px;
+        text-align: center;
+      }
+      .profile-photo {
+        margin: 0 auto;
+        width: 160px;
+        height: 160px;
+      }
+      .profile-title { font-size: 19px; }
+      .profile-name { font-size: 24px; }
+
+      .message-card { padding: 40px 24px 48px; }
+      .message-card::before { left: 24px; right: 24px; }
+      .message-body p { font-size: 15px; line-height: 2; }
+      .message-body .quote { padding-left: 0.8em; }
+
+      .message-closing { margin-top: 36px; padding-top: 32px; }
+      .message-closing-text { font-size: 20px; letter-spacing: 1px; }
+      .message-closing-text::before,
+      .message-closing-text::after {
+        width: 20px;
+      }
+      .message-closing-text::before { left: -30px; }
+      .message-closing-text::after { right: -30px; }
+
+      .cta-section { padding: 56px 20px; }
+      .cta-inner h2 { font-size: 22px; }
+      .cta-button { font-size: 14px; padding: 16px 32px; width: 100%; justify-content: center; }
+
+      .form-section { padding: 56px 20px 72px; }
+      .form-header h2 { font-size: 24px; }
+      .form-header p { font-size: 14px; }
+      .contact-form { padding: 32px 24px 36px; }
+      .form-row { grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+      .form-submit button { width: 100%; min-width: 0; font-size: 15px; padding: 16px 24px; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-links { grid-template-columns: 1fr; }
+
+      .header-back { display: none; }
+      .header-cta-button {
+        font-size: 11px;
+        padding: 8px 14px;
+      }
+      .header-logo img { height: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="header-logo">
+        <img src="TUNAG_for_UNION_fulllogo.png" alt="TUNAG for UNION">
+      </a>
+      <div class="header-actions">
+        <a href="javascript:history.back()" class="header-back">← 戻る</a>
+        <a href="#contact-form" class="header-cta-button">お問い合わせフォームへ ↓</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">MESSAGE</div>
+      <h1>組合の未来を、<span>ともにつくる。</span></h1>
+      <p class="hero-sub">TUNAG for UNION からのメッセージ</p>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="main-inner">
+      <!-- PROFILE -->
+      <div class="profile">
+        <div class="profile-photo">
+          <img src="sasaki_photo.JPG" alt="佐々木 隆寛 / 株式会社スタメン 専門役員">
+        </div>
+        <div class="profile-info">
+          <div class="profile-company">株式会社スタメン</div>
+          <div class="profile-role">専門役員</div>
+          <div class="profile-title">Union Solution Strategist</div>
+          <div class="profile-name">佐々木 隆寛<span class="profile-name-en">SASAKI TAKAHIRO</span></div>
+        </div>
+      </div>
+
+      <!-- MESSAGE -->
+      <article class="message-card">
+        <div class="message-body">
+          <p>働く環境はかつてないスピードで変化し、雇用の在り方も、働く人の価値観も、多様化し続けています。その変化のただ中で、私は強い危機感と同時に、大きな可能性を感じてきました。</p>
+          <p>私はこれまで、労働組合の専従（中央執行書記長）として、労使交渉、組織運営、教育研修、広報、組織化、政策推進など、活動の中枢に携わってまいりました。そのなかで、何度も自問してきたことがあります。</p>
+          <p class="quote">—— 労働組合は、本来もっと大きな価値を発揮できるのではないか。</p>
+          <p class="quote">—— そして、いまの時代にふさわしい活動の形になっているだろうか。</p>
+          <p>こうした問いと向き合い続けるなかで、私はあえて労働組合の"外"に立場を移し、組合運営のあり方そのものを今の時代に合わせて見直し、更新していくことが必要だと考えるようになりました。</p>
+          <p>当社はこれまで、組合コミュニケーションプラットフォーム「TUNAG」のご提供を通じて、多くの労働組合様の活性化に貢献してまいりました。しかし、組合が直面する課題はコミュニケーションだけにとどまりません。組織運営、教育・研修、業務効率化、デジタル活用——求められる支援の領域は年々広がっています。</p>
+          <p>だからこそ私たちは、TUNAGという一つのプロダクトに閉じることなく、労働組合様が抱える課題に多方面からお応えできるよう、サービスの幅を広げ、進化させてまいります。</p>
+        </div>
+        <div class="message-closing">
+          <div class="message-closing-text">組合の未来を、ともにつくる。</div>
+          <p class="message-closing-note">その想いを胸に、皆さまのパートナーとして<br>伴走し続けることをお約束いたします。</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- CTA SECTION (intro to form) -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>まずはお気軽にご相談ください</h2>
+      <p>貴組合の課題に合わせた最適な支援プランをご提案いたします。</p>
+      <a href="#contact-form" class="cta-button">お問い合わせフォームへ ↓</a>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="form-section" id="contact-form">
+    <div class="form-inner">
+      <div class="form-header">
+        <div class="form-label">CONTACT</div>
+        <h2>お問い合わせフォーム</h2>
+        <p>下記フォームに必要事項をご記入の上、送信ボタンを押してください。<br>担当者より2営業日以内にご連絡差し上げます。</p>
+      </div>
+      <form class="contact-form" action="https://formsubmit.co/tunag-union-is@stmn.co.jp" method="POST" novalidate>
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_cc" value="union-sales@stmn.co.jp">
+        <input type="hidden" name="_subject" value="【TUNAG for UNION】お問い合わせフォームより新規受付">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://biz.tunag.jp/lp/union/thanks">
+        <div class="form-field">
+          <label for="union-name">
+            組合名
+            <span class="required">必須</span>
+          </label>
+          <input type="text" id="union-name" name="union_name" placeholder="例）株式会社スタメン労働組合" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="last-name">
+              姓
+              <span class="required">必須</span>
+            </label>
+            <input type="text" id="last-name" name="last_name" placeholder="例）山田" required>
+          </div>
+          <div class="form-field">
+            <label for="first-name">
+              名
+              <span class="required">必須</span>
+            </label>
+            <input type="text" id="first-name" name="first_name" placeholder="例）太郎" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="email">
+            メールアドレス
+            <span class="required">必須</span>
+          </label>
+          <input type="email" id="email" name="email" placeholder="例）yamada@example.com" required>
+        </div>
+
+        <div class="form-field">
+          <label for="phone">
+            電話番号
+            <span class="required">必須</span>
+          </label>
+          <input type="tel" id="phone" name="phone" placeholder="例）03-1234-5678" required>
+        </div>
+
+        <div class="form-field">
+          <label for="position">
+            お役職
+            <span class="required">必須</span>
+          </label>
+          <select id="position" name="position" required>
+            <option value="">選択してください</option>
+            <option value="委員長">委員長</option>
+            <option value="副委員長">副委員長</option>
+            <option value="書記長">書記長</option>
+            <option value="書記次長">書記次長</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="member-count">
+            組合員数
+            <span class="required">必須</span>
+          </label>
+          <select id="member-count" name="member_count" required>
+            <option value="">選択してください</option>
+            <option value="〜100名">〜100名</option>
+            <option value="101〜500名">101〜500名</option>
+            <option value="500〜1,000名">500〜1,000名</option>
+            <option value="1,001名〜">1,001名〜</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="question">
+            ご質問
+            <span class="optional">任意</span>
+          </label>
+          <textarea id="question" name="question" placeholder="ご質問・ご相談内容をご記入ください"></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit">送信する →</button>
+        </div>
+        <p class="form-note">
+          ご入力いただいた個人情報は、<a href="https://stmn.co.jp/policy" target="_blank" rel="noopener" style="color: var(--primary);">プライバシーポリシー</a>に基づき適切に管理いたします。
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>TUNAG for UNION</h3>
+          <p>労働組合の総合支援ブランド</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>サービス</h4>
+            <ul>
+              <li><a href="https://biz.tunag.jp/lp/union" target="_blank" rel="noopener">TUNAG for UNION（アプリ）</a></li>
+              <li><a href="advisory.html">アドバイザリー</a></li>
+              <li><a href="seminar.html">カスタムセミナー</a></li>
+              <li><a href="https://assistant.tunag.jp/" target="_blank" rel="noopener">書記代行</a></li>
+              <li><a href="underconstruction.html">コミュニティ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>会社情報</h4>
+            <ul>
+              <li><a href="https://stmn.co.jp/" target="_blank" rel="noopener">株式会社スタメン</a></li>
+              <li><a href="https://stmn.co.jp/policy" target="_blank" rel="noopener">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Stamen, Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

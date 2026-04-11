@@ -72,6 +72,39 @@
       width: auto;
       display: block;
     }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-left: auto;
+      margin-right: 24px;
+    }
+    .header-nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .header-nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      height: 2px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s;
+    }
+    .header-nav a:hover {
+      color: var(--primary);
+    }
+    .header-nav a:hover::after {
+      transform: scaleX(1);
+    }
     .header-cta {
       display: flex;
       gap: 10px;
@@ -207,6 +240,7 @@
     /* ===== SECTIONS ===== */
     .section {
       padding: var(--section-gap) 24px;
+      scroll-margin-top: 72px;
     }
     .section-inner {
       max-width: 1100px;
@@ -822,6 +856,7 @@
 
       .header-cta a { font-size: 12px; padding: 6px 12px; }
       .header-logo img { height: 32px; }
+      .header-nav { display: none; }
     }
   </style>
 </head>
@@ -832,9 +867,12 @@
       <a href="#" class="header-logo">
         <img src="tunag_for_union_advisory.png" alt="TUNAG for UNION アドバイザリー">
       </a>
+      <nav class="header-nav">
+        <a href="#support">支援領域</a>
+        <a href="#pricing">料金体系</a>
+      </nav>
       <div class="header-cta">
-        <a href="#contact" class="btn-outline">資料ダウンロード</a>
-        <a href="#contact" class="btn-primary">お問い合わせ</a>
+        <a href="message.html" class="btn-primary">お問い合わせ</a>
       </div>
     </div>
   </header>
@@ -850,8 +888,7 @@
           組合運営経験者が、執行部に伴走して課題を解決します。
         </p>
         <div class="hero-cta">
-          <a href="#contact" class="cta-main">お問い合わせはこちら →</a>
-          <a href="#contact" class="cta-sub">資料をダウンロード</a>
+          <a href="message.html" class="cta-main">お問い合わせはこちら →</a>
         </div>
       </div>
       <div class="hero-image">
@@ -940,14 +977,13 @@
     <div class="mid-cta-inner">
       <p>まずはお気軽にご相談ください</p>
       <div class="mid-cta-buttons">
-        <a href="#contact" class="btn-primary">お問い合わせ</a>
-        <a href="#contact" class="btn-outline">資料ダウンロード</a>
+        <a href="message.html" class="btn-primary">お問い合わせはこちら →</a>
       </div>
     </div>
   </div>
 
   <!-- SUPPORT AREAS -->
-  <section class="section support-section">
+  <section class="section support-section" id="support">
     <div class="section-inner">
       <p class="section-label">Support</p>
       <h2 class="section-title">6つの支援領域</h2>
@@ -1093,8 +1129,7 @@
     <div class="mid-cta-inner">
       <p>組合運営のお悩み、まずはご相談ください</p>
       <div class="mid-cta-buttons">
-        <a href="#contact" class="btn-primary">お問い合わせ</a>
-        <a href="#contact" class="btn-outline">資料ダウンロード</a>
+        <a href="message.html" class="btn-primary">お問い合わせはこちら →</a>
       </div>
     </div>
   </div>
@@ -1118,17 +1153,17 @@
           <p>実際に組合運営を経験した専門家が支援。机上の空論ではなく、現場に寄り添った助言を提供。</p>
         </div>
         <div class="reason-card">
-          <div class="reason-number" style="font-size:28px;">SaaS ×<br>伴走</div>
-          <div class="reason-unit">テクノロジーと人の力</div>
-          <h3>独自の支援モデル</h3>
-          <p>TUNAGの組合向けSaaS機能と、経験者による伴走支援を組み合わせた唯一無二のモデル。</p>
+          <div class="reason-number" style="font-size:36px;">All in One</div>
+          <div class="reason-unit">SaaS・研修・伴走をひとつに</div>
+          <h3>ワンストップの総合支援</h3>
+          <p>SaaS、セミナー、コンサルティング、事務局支援まで。組合運営に必要なサービスをひとつでカバーします。</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PRICING -->
-  <section class="section">
+  <section class="section" id="pricing">
     <div class="section-inner">
       <p class="section-label">Pricing</p>
       <h2 class="section-title" style="text-align:center;">料金体系</h2>
@@ -1154,7 +1189,7 @@
           </div>
           <div class="pricing-merit">
             <p>
-              <strong>TUNAG for UNIONとの併用で、さらに効果的に。</strong><br>
+              <strong>TUNAG for UNION アプリとの併用で、さらに効果的に。</strong><br>
               組合管理SaaS「TUNAG」と組み合わせることで、情報共有・組合員エンゲージメント向上を同時に実現できます。
             </p>
           </div>
@@ -1219,8 +1254,7 @@
       <h2 class="section-title">組合運営のお悩み、<br>まずはお気軽にご相談ください。</h2>
       <p>貴組合の課題に合わせた最適な支援プランをご提案いたします。</p>
       <div class="cta-buttons">
-        <a href="#" class="cta-main">お問い合わせはこちら →</a>
-        <a href="#" class="cta-sub">資料をダウンロード</a>
+        <a href="message.html" class="cta-main">お問い合わせはこちら →</a>
       </div>
     </div>
   </section>
@@ -1231,25 +1265,24 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>TUNAG for UNION</h3>
-          <p>労働組合の運営課題を解決する、<br>SaaS×伴走支援サービス</p>
+          <p>労働組合の総合支援ブランド</p>
         </div>
         <div class="footer-links">
           <div>
             <h4>サービス</h4>
             <ul>
-              <li><a href="#">TUNAG for UNION（アプリ）</a></li>
-              <li><a href="#">アドバイザリー</a></li>
-              <li><a href="#">カスタムセミナー</a></li>
-              <li><a href="#">書記代行</a></li>
-              <li><a href="#">コミュニティ</a></li>
+              <li><a href="https://biz.tunag.jp/lp/union" target="_blank" rel="noopener">TUNAG for UNION（アプリ）</a></li>
+              <li><a href="advisory.html">アドバイザリー</a></li>
+              <li><a href="seminar.html">カスタムセミナー</a></li>
+              <li><a href="https://assistant.tunag.jp/" target="_blank" rel="noopener">書記代行</a></li>
+              <li><a href="underconstruction.html">コミュニティ</a></li>
             </ul>
           </div>
           <div>
             <h4>会社情報</h4>
             <ul>
-              <li><a href="#">株式会社スタメン</a></li>
-              <li><a href="#">プライバシーポリシー</a></li>
-              <li><a href="#">特定商取引法に基づく表記</a></li>
+              <li><a href="https://stmn.co.jp/" target="_blank" rel="noopener">株式会社スタメン</a></li>
+              <li><a href="https://stmn.co.jp/policy" target="_blank" rel="noopener">プライバシーポリシー</a></li>
             </ul>
           </div>
         </div>
