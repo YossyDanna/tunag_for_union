@@ -9,11 +9,11 @@
   <meta property="og:description" content="このページは現在準備中です。">
   <meta property="og:type" content="website">
   <meta name="robots" content="noindex">
-  <link rel="icon" type="image/png" href="TUNAG_for_UNION_logo.png">
-  <link rel="apple-touch-icon" href="TUNAG_for_UNION_logo.png">
+  <link rel="icon" type="image/png" href="common_file/TUNAG_for_UNION_logo.png">
+  <link rel="apple-touch-icon" href="common_file/TUNAG_for_UNION_logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Shippori+Mincho+B1:wght@500;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -36,7 +36,7 @@
       color: var(--text-main);
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
-      background: linear-gradient(135deg, #283e59 0%, #1e3a5f 50%, #1a4a7a 100%);
+      background: linear-gradient(135deg, #3A6FE0 0%, #4A82F4 50%, #5A90F8 100%);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -151,7 +151,7 @@
       text-transform: uppercase;
     }
     .title {
-      font-family: 'Noto Serif JP', serif;
+      font-family: 'Shippori Mincho B1', serif;
       font-size: 44px;
       font-weight: 700;
       letter-spacing: 2px;
@@ -239,13 +239,85 @@
         padding: 14px 20px;
       }
     }
+    /* ===== ENHANCED TYPOGRAPHY ===== */
+    .label {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* ===== GRAIN TEXTURE ===== */
+    body > *:not(.page-header):not(.main):not(.page-footer) {
+      position: relative;
+    }
+    body {
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"),
+        linear-gradient(135deg, #3A6FE0 0%, #4A82F4 50%, #5A90F8 100%);
+      background-blend-mode: overlay;
+      background-size: 180px, 100%;
+    }
+
+    /* ===== CTA PULSE ===== */
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(244, 70, 70, 0.45); }
+      70% { box-shadow: 0 0 0 14px rgba(244, 70, 70, 0); }
+    }
+    .btn-primary {
+      animation: ctaPulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .btn-primary:hover {
+      animation: none;
+    }
+
+    /* ===== ENTRANCE ANIMATION ===== */
+    .card > * {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: cardIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .card .icon-wrap { animation-delay: 0.1s; }
+    .card .label { animation-delay: 0.2s; }
+    .card .title { animation-delay: 0.35s; }
+    .card .message { animation-delay: 0.5s; }
+    .card .actions { animation-delay: 0.65s; }
+    @keyframes cardIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== ICON GLOW ===== */
+    .icon-wrap {
+      box-shadow: 0 0 40px rgba(125, 196, 255, 0.15);
+    }
+    .icon-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* ===== FLOATING PARTICLES ===== */
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: particleFloat linear infinite;
+    }
+    @keyframes particleFloat {
+      0% { transform: translateY(100vh) scale(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-20vh) scale(1); opacity: 0; }
+    }
   </style>
 </head>
 <body>
   <!-- HEADER -->
   <header class="page-header">
     <a href="#">
-      <img src="TUNAG_for_UNION_fulllogo.png" alt="TUNAG for UNION">
+      <img src="common_file/TUNAG_for_UNION_fulllogo.png" alt="TUNAG for UNION">
     </a>
   </header>
 
@@ -273,5 +345,18 @@
   <footer class="page-footer">
     &copy; 2026 Stamen, Inc. All rights reserved.
   </footer>
+<script>
+  // Generate floating particles
+  const body = document.body;
+  for (let i = 0; i < 20; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.width = particle.style.height = (Math.random() * 3 + 2) + 'px';
+    particle.style.animationDuration = (Math.random() * 12 + 8) + 's';
+    particle.style.animationDelay = (Math.random() * 10) + 's';
+    body.appendChild(particle);
+  }
+</script>
 </body>
 </html>

@@ -9,11 +9,11 @@
   <meta property="og:description" content="貴組合のニーズに合わせたオーダーメイドセミナーを提供。オンライン・オフライン対応。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://biz.tunag.jp/lp/union/seminar">
-  <link rel="icon" type="image/png" href="TUNAG_for_UNION_logo.png">
-  <link rel="apple-touch-icon" href="TUNAG_for_UNION_logo.png">
+  <link rel="icon" type="image/png" href="common_file/TUNAG_for_UNION_logo.png">
+  <link rel="apple-touch-icon" href="common_file/TUNAG_for_UNION_logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Shippori+Mincho+B1:wght@500;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -134,7 +134,7 @@
     /* ===== HERO ===== */
     .hero {
       padding: 140px 24px 80px;
-      background: linear-gradient(135deg, #283e59 0%, #1e3a5f 50%, #1a4a7a 100%);
+      background: linear-gradient(135deg, #3A6FE0 0%, #4A82F4 50%, #5A90F8 100%);
       color: #fff;
       position: relative;
       overflow: hidden;
@@ -753,7 +753,7 @@
 
     /* ===== CTA SECTION ===== */
     .cta-section {
-      background: linear-gradient(135deg, var(--primary) 0%, #2952a3 100%);
+      background: linear-gradient(135deg, #3A6FE0 0%, #4A82F4 100%);
       color: #fff;
       text-align: center;
     }
@@ -921,6 +921,185 @@
       .header-logo img { height: 32px; }
       .header-nav { display: none; }
     }
+
+    /* ===== ENHANCED TYPOGRAPHY ===== */
+    .hero h1, .section-title, .pricing-price, .set-plan-price {
+      font-family: 'Shippori Mincho B1', serif;
+    }
+    .section-label, .hero-badge {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    [data-reveal].revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [data-reveal-delay="1"] { transition-delay: 0.12s; }
+    [data-reveal-delay="2"] { transition-delay: 0.24s; }
+    [data-reveal-delay="3"] { transition-delay: 0.36s; }
+    [data-reveal-delay="4"] { transition-delay: 0.48s; }
+    [data-reveal-delay="5"] { transition-delay: 0.6s; }
+    [data-reveal-delay="6"] { transition-delay: 0.72s; }
+
+    /* ===== GRAIN TEXTURE OVERLAY ===== */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 180px;
+    }
+
+    /* ===== CTA PULSE ===== */
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(244, 70, 70, 0.45); }
+      70% { box-shadow: 0 0 0 14px rgba(244, 70, 70, 0); }
+    }
+    .cta-main, .btn-primary {
+      animation: ctaPulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .cta-main:hover, .btn-primary:hover {
+      animation: none;
+    }
+
+    /* ===== HERO IMAGE FLOAT ===== */
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .hero-image {
+      animation: heroFloat 5s ease-in-out infinite;
+    }
+
+    /* ===== ENHANCED CARD HOVER ===== */
+    .theme-card, .pain-card, .overview-feature, .pricing-card {
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    }
+    .theme-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(40, 62, 89, 0.12);
+    }
+    .pain-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(40, 62, 89, 0.1);
+    }
+    .overview-feature:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(40, 62, 89, 0.12);
+    }
+
+    /* ===== HEADER SCROLL ===== */
+    .header {
+      transition: box-shadow 0.35s ease, background 0.35s ease;
+    }
+    .header.scrolled {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ===== HERO STAGGER ===== */
+    .hero-badge, .hero h1, .hero-sub, .hero-cta {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .hero-badge { animation-delay: 0.1s; }
+    .hero h1 { animation-delay: 0.25s; }
+    .hero-sub { animation-delay: 0.4s; }
+    .hero-cta { animation-delay: 0.55s; }
+    .hero-image {
+      opacity: 0;
+      animation: heroImgIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+    }
+    @keyframes heroIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroImgIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* ===== FLOW STEP ANIMATION ===== */
+    .flow-step-line {
+      background: linear-gradient(to bottom, var(--primary-light), var(--border));
+    }
+    .flow-step-num {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .flow-step:hover .flow-step-num {
+      transform: scale(1.1);
+      box-shadow: 0 4px 16px rgba(40, 62, 89, 0.2);
+    }
+
+    /* ===== FAQ ENHANCED ===== */
+    .faq-answer {
+      transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .faq-question::after {
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* ===== MID CTA ENHANCED ===== */
+    .mid-cta {
+      background: linear-gradient(135deg, #daeeff 0%, #e8f4ff 50%, #d0e8ff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .mid-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      background: rgba(16, 123, 255, 0.06);
+      border-radius: 50%;
+    }
+
+    /* ===== SET PLAN GLOW ===== */
+    .set-plan {
+      transition: box-shadow 0.4s ease;
+    }
+    .set-plan:hover {
+      box-shadow: 0 16px 48px rgba(16, 123, 255, 0.18);
+    }
+
+    /* ===== SECTION LABEL ACCENT ===== */
+    .section-label {
+      position: relative;
+      padding-left: 20px;
+    }
+    .section-label::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* ===== THEME CARD IMAGE ZOOM ===== */
+    .theme-card-image img {
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .theme-card:hover .theme-card-image img {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -928,7 +1107,7 @@
   <header class="header">
     <div class="header-inner">
       <a href="#" class="header-logo">
-        <img src="tunag_for_union_seminar.png" alt="TUNAG for UNION カスタムセミナー">
+        <img src="seminar_file/tunag_for_union_seminar.png" alt="TUNAG for UNION カスタムセミナー">
       </a>
       <nav class="header-nav">
         <a href="#themes">テーマ例</a>
@@ -955,7 +1134,7 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="seminar_top.png" alt="労働組合向けのオーダーメイドセミナー・研修会">
+        <img src="seminar_file/seminar_top.png" alt="労働組合向けのオーダーメイドセミナー・研修会">
       </div>
     </div>
   </section>
@@ -964,38 +1143,38 @@
   <section class="section pain-section">
     <div class="section-inner">
       <p class="section-label">Problem</p>
-      <h2 class="section-title">こんなお悩みありませんか？</h2>
+      <h2 class="section-title" data-reveal>こんなお悩みありませんか？</h2>
       <div class="pain-grid">
-        <div class="pain-card">
+        <div class="pain-card" data-reveal data-reveal-delay="1">
           <div class="pain-icon">
-            <img src="seminar_1-1.jpg" alt="毎年同じテーマでマンネリ化">
+            <img src="seminar_file/seminar_1-1.jpg" alt="毎年同じテーマでマンネリ化">
           </div>
           <div class="pain-card-body">
             <h3>毎年同じテーマでマンネリ化</h3>
             <p>研修会の内容がワンパターンになり、組合員の関心が薄れてきている。</p>
           </div>
         </div>
-        <div class="pain-card">
+        <div class="pain-card" data-reveal data-reveal-delay="2">
           <div class="pain-icon">
-            <img src="seminar_1-2.jpg" alt="良い講師がなかなか見つからない">
+            <img src="seminar_file/seminar_1-2.jpg" alt="良い講師がなかなか見つからない">
           </div>
           <div class="pain-card-body">
             <h3>良い講師がなかなか見つからない</h3>
             <p>労働組合に詳しく、テーマに合った講師を探すのに毎回苦労している。</p>
           </div>
         </div>
-        <div class="pain-card">
+        <div class="pain-card" data-reveal data-reveal-delay="3">
           <div class="pain-icon">
-            <img src="seminar_1-3.jpg" alt="参加率が年々低下している">
+            <img src="seminar_file/seminar_1-3.jpg" alt="参加率が年々低下している">
           </div>
           <div class="pain-card-body">
             <h3>参加率が年々低下している</h3>
             <p>組合員が「また同じ話か」と感じ、研修会への参加意欲が下がっている。</p>
           </div>
         </div>
-        <div class="pain-card">
+        <div class="pain-card" data-reveal data-reveal-delay="4">
           <div class="pain-icon">
-            <img src="seminar_1-4.jpg" alt="企画の進め方が分からない">
+            <img src="seminar_file/seminar_1-4.jpg" alt="企画の進め方が分からない">
           </div>
           <div class="pain-card-body">
             <h3>企画の進め方が分からない</h3>
@@ -1010,11 +1189,11 @@
   <section class="section">
     <div class="section-inner">
       <p class="section-label">Service</p>
-      <h2 class="section-title">カスタムセミナーとは</h2>
-      <p class="section-desc">
+      <h2 class="section-title" data-reveal>カスタムセミナーとは</h2>
+      <p class="section-desc" data-reveal>
         貴組合のニーズや課題に合わせて、テーマ・内容・形式をフルカスタマイズできるオーダーメイドセミナーです。
       </p>
-      <div class="overview-box">
+      <div class="overview-box" data-reveal>
         <h3>すべてのセミナーが「貴組合だけ」のために</h3>
         <p>
           一般的なパッケージ研修とは違い、貴組合の業種・規模・課題に合わせてテーマ選定から講師手配、
@@ -1022,24 +1201,24 @@
         </p>
       </div>
       <div class="overview-features">
-        <div class="overview-feature">
-          <img src="seminar_2-1.png" alt="テーマ自由設計" class="overview-feature-bg">
+        <div class="overview-feature" data-reveal data-reveal-delay="1">
+          <img src="seminar_file/seminar_2-1.png" alt="テーマ自由設計" class="overview-feature-bg">
           <div class="overview-feature-overlay"></div>
           <div class="overview-feature-content">
             <h3>テーマ自由設計</h3>
             <p>貴組合の課題に応じて最適なテーマを選定・カスタマイズ</p>
           </div>
         </div>
-        <div class="overview-feature">
-          <img src="seminar_2-2.png" alt="最適な講師をマッチング" class="overview-feature-bg">
+        <div class="overview-feature" data-reveal data-reveal-delay="2">
+          <img src="seminar_file/seminar_2-2.png" alt="最適な講師をマッチング" class="overview-feature-bg">
           <div class="overview-feature-overlay"></div>
           <div class="overview-feature-content">
             <h3>最適な講師をマッチング</h3>
             <p>テーマに精通した専門家・実務経験者を手配</p>
           </div>
         </div>
-        <div class="overview-feature">
-          <img src="seminar_2-3.png" alt="オンライン・オフライン対応" class="overview-feature-bg">
+        <div class="overview-feature" data-reveal data-reveal-delay="3">
+          <img src="seminar_file/seminar_2-3.png" alt="オンライン・オフライン対応" class="overview-feature-bg">
           <div class="overview-feature-overlay"></div>
           <div class="overview-feature-content">
             <h3>オンライン・オフライン対応</h3>
@@ -1064,57 +1243,57 @@
   <section class="section theme-section" id="themes">
     <div class="section-inner">
       <p class="section-label">Themes</p>
-      <h2 class="section-title">セミナーテーマ例</h2>
-      <p class="section-desc">以下は一例です。貴組合のご要望に合わせて自由にカスタマイズいただけます。</p>
+      <h2 class="section-title" data-reveal>セミナーテーマ例</h2>
+      <p class="section-desc" data-reveal>以下は一例です。貴組合のご要望に合わせて自由にカスタマイズいただけます。</p>
       <div class="theme-grid">
-        <div class="theme-card">
+        <div class="theme-card" data-reveal data-reveal-delay="1">
           <div class="theme-card-image">
-            <img src="seminar_ai.png" alt="生成AI活用セミナー">
+            <img src="seminar_file/seminar_ai.png" alt="生成AI活用セミナー">
           </div>
           <div class="theme-card-body">
             <h3>生成AI活用</h3>
             <p>ChatGPTなどの生成AIを組合活動に活かす方法を実践的に学ぶセミナー。</p>
           </div>
         </div>
-        <div class="theme-card">
+        <div class="theme-card" data-reveal data-reveal-delay="2">
           <div class="theme-card-image">
-            <img src="seminar_harassment.png" alt="ハラスメント対策セミナー">
+            <img src="seminar_file/seminar_harassment.png" alt="ハラスメント対策セミナー">
           </div>
           <div class="theme-card-body">
             <h3>ハラスメント対策</h3>
             <p>職場のハラスメント防止と対応策を、最新の法改正を踏まえて解説。</p>
           </div>
         </div>
-        <div class="theme-card">
+        <div class="theme-card" data-reveal data-reveal-delay="3">
           <div class="theme-card-image">
-            <img src="seminar_lifeplan.png" alt="ライフプランセミナー">
+            <img src="seminar_file/seminar_lifeplan.png" alt="ライフプランセミナー">
           </div>
           <div class="theme-card-body">
             <h3>ライフプラン</h3>
             <p>組合員のライフステージに合わせた資産形成やキャリア設計をサポート。</p>
           </div>
         </div>
-        <div class="theme-card">
+        <div class="theme-card" data-reveal data-reveal-delay="4">
           <div class="theme-card-image">
-            <img src="seminar_laborlaw.png" alt="労働法基礎セミナー">
+            <img src="seminar_file/seminar_laborlaw.png" alt="労働法基礎セミナー">
           </div>
           <div class="theme-card-body">
             <h3>労働法基礎</h3>
             <p>組合役員として知っておくべき労働法の基礎知識を分かりやすく解説。</p>
           </div>
         </div>
-        <div class="theme-card">
+        <div class="theme-card" data-reveal data-reveal-delay="5">
           <div class="theme-card-image">
-            <img src="seminar_communication.png" alt="コミュニケーション研修">
+            <img src="seminar_file/seminar_communication.png" alt="コミュニケーション研修">
           </div>
           <div class="theme-card-body">
             <h3>コミュニケーション研修</h3>
             <p>組合活動に必要な対話力・ファシリテーションスキルを習得。</p>
           </div>
         </div>
-        <div class="theme-card">
+        <div class="theme-card" data-reveal data-reveal-delay="6">
           <div class="theme-card-image">
-            <img src="seminar_unionmanagement.png" alt="組合運営スキルアップ">
+            <img src="seminar_file/seminar_unionmanagement.png" alt="組合運営スキルアップ">
           </div>
           <div class="theme-card-body">
             <h3>組合運営スキルアップ</h3>
@@ -1130,12 +1309,12 @@
   <section class="section" id="pricing">
     <div class="section-inner">
       <p class="section-label">Pricing</p>
-      <h2 class="section-title" style="text-align:center;">料金プラン</h2>
-      <p class="section-desc" style="text-align:center; margin-left:auto; margin-right:auto;">
+      <h2 class="section-title" data-reveal style="text-align:center;">料金プラン</h2>
+      <p class="section-desc" data-reveal style="text-align:center; margin-left:auto; margin-right:auto;">
         開催形式に合わせて2つのプランをご用意しています。
       </p>
       <div class="pricing-grid">
-        <div class="pricing-card featured">
+        <div class="pricing-card featured" data-reveal data-reveal-delay="1">
           <div class="pricing-card-header">
             <h3>オフラインセミナー</h3>
             <p>講師が現地に訪問</p>
@@ -1154,7 +1333,7 @@
             </ul>
           </div>
         </div>
-        <div class="pricing-card">
+        <div class="pricing-card" data-reveal data-reveal-delay="2">
           <div class="pricing-card-header">
             <h3>オンラインセミナー</h3>
             <p>Zoom等で全国対応</p>
@@ -1176,7 +1355,7 @@
       </div>
 
       <!-- SET PLAN PROMO -->
-      <div class="set-plan">
+      <div class="set-plan" data-reveal>
         <div class="set-plan-badge">お得な3回セットプラン</div>
         <div class="set-plan-body">
           <div class="set-plan-left">
@@ -1198,7 +1377,7 @@
       </div>
 
       <!-- COMPARISON TABLE -->
-      <div class="plan-comparison">
+      <div class="plan-comparison" data-reveal>
         <table>
           <thead>
             <tr>
@@ -1248,10 +1427,10 @@
   <section class="section" style="background: var(--bg-light);">
     <div class="section-inner">
       <p class="section-label">Flow</p>
-      <h2 class="section-title">開催までの流れ</h2>
-      <p class="section-desc">お問い合わせからセミナー開催まで、丁寧にサポートいたします。</p>
+      <h2 class="section-title" data-reveal>開催までの流れ</h2>
+      <p class="section-desc" data-reveal>お問い合わせからセミナー開催まで、丁寧にサポートいたします。</p>
       <div class="flow-steps">
-        <div class="flow-step">
+        <div class="flow-step" data-reveal data-reveal-delay="1">
           <div class="flow-step-marker">
             <div class="flow-step-num">1</div>
             <div class="flow-step-line"></div>
@@ -1261,7 +1440,7 @@
             <p>まずはお気軽にお問い合わせください。貴組合の課題やご要望、参加者層、開催時期などをヒアリングします。</p>
           </div>
         </div>
-        <div class="flow-step">
+        <div class="flow-step" data-reveal data-reveal-delay="2">
           <div class="flow-step-marker">
             <div class="flow-step-num">2</div>
             <div class="flow-step-line"></div>
@@ -1271,7 +1450,7 @@
             <p>ヒアリングを基に、最適なテーマと内容をご提案。貴組合のご要望に合わせてカスタマイズします。</p>
           </div>
         </div>
-        <div class="flow-step">
+        <div class="flow-step" data-reveal data-reveal-delay="3">
           <div class="flow-step-marker">
             <div class="flow-step-num">3</div>
             <div class="flow-step-line"></div>
@@ -1281,7 +1460,7 @@
             <p>テーマに最適な講師をマッチング。セミナー資料の作成も一貫してサポートいたします。</p>
           </div>
         </div>
-        <div class="flow-step">
+        <div class="flow-step" data-reveal data-reveal-delay="4">
           <div class="flow-step-marker">
             <div class="flow-step-num">4</div>
             <div class="flow-step-line"></div>
@@ -1309,9 +1488,9 @@
   <section class="section">
     <div class="section-inner">
       <p class="section-label">FAQ</p>
-      <h2 class="section-title" style="text-align:center;">よくあるご質問</h2>
+      <h2 class="section-title" data-reveal style="text-align:center;">よくあるご質問</h2>
       <div class="faq-list">
-        <div class="faq-item">
+        <div class="faq-item" data-reveal data-reveal-delay="1">
           <button class="faq-question">
             セミナーのテーマは自由に選べますか？
           </button>
@@ -1319,7 +1498,7 @@
             <div class="faq-answer-inner">はい、テーマは完全に自由に設定いただけます。掲載しているテーマ例以外にも、貴組合の課題やご要望に合わせてカスタマイズいたします。まずはご相談ください。</div>
           </div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item" data-reveal data-reveal-delay="2">
           <button class="faq-question">
             参加人数に制限はありますか？
           </button>
@@ -1327,7 +1506,7 @@
             <div class="faq-answer-inner">特に人数制限はありません。少人数のワークショップ形式から、数百名規模の講演まで対応可能です。参加人数に応じて最適な形式をご提案いたします。</div>
           </div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item" data-reveal data-reveal-delay="3">
           <button class="faq-question">
             開催までどのくらいの準備期間が必要ですか？
           </button>
@@ -1335,7 +1514,7 @@
             <div class="faq-answer-inner">通常、お問い合わせから開催まで1〜2ヶ月程度の準備期間をいただいております。テーマや講師の手配状況によって変動しますので、まずはお早めにご相談ください。</div>
           </div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item" data-reveal data-reveal-delay="4">
           <button class="faq-question">
             オンラインとオフラインのハイブリッド開催は可能ですか？
           </button>
@@ -1343,7 +1522,7 @@
             <div class="faq-answer-inner">はい、ハイブリッド開催にも対応しております。現地参加とオンライン参加を併用することで、全国の組合員が参加しやすい環境を整えることができます。</div>
           </div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item" data-reveal data-reveal-delay="5">
           <button class="faq-question">
             TUNAGを導入していなくても利用できますか？
           </button>
@@ -1401,15 +1580,44 @@
   </footer>
 
   <script>
-    // FAQ Accordion
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        const isActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-        if (!isActive) item.classList.add('active');
-      });
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
     });
-  </script>
+  });
+
+  // Scroll Reveal
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+  // Header scroll
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive: true });
+
+  // Parallax on hero image
+  const heroImage = document.querySelector('.hero-image');
+  if (heroImage) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      if (scrolled < 800) {
+        heroImage.style.transform = `translateY(${scrolled * 0.06}px)`;
+      }
+    }, { passive: true });
+  }
+</script>
 </body>
 </html>

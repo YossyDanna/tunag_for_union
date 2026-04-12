@@ -8,11 +8,11 @@
   <meta property="og:title" content="メッセージ | TUNAG for UNION">
   <meta property="og:description" content="組合の未来を、ともにつくる。労働組合のパートナーとして伴走する想いをお伝えします。">
   <meta property="og:type" content="website">
-  <link rel="icon" type="image/png" href="TUNAG_for_UNION_logo.png">
-  <link rel="apple-touch-icon" href="TUNAG_for_UNION_logo.png">
+  <link rel="icon" type="image/png" href="common_file/TUNAG_for_UNION_logo.png">
+  <link rel="apple-touch-icon" href="common_file/TUNAG_for_UNION_logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Shippori+Mincho+B1:wght@500;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -117,7 +117,7 @@
     /* ===== HERO ===== */
     .hero {
       padding: 140px 24px 60px;
-      background: linear-gradient(135deg, #283e59 0%, #1e3a5f 50%, #1a4a7a 100%);
+      background: linear-gradient(135deg, #3A6FE0 0%, #4A82F4 50%, #5A90F8 100%);
       color: #fff;
       position: relative;
       overflow: hidden;
@@ -160,7 +160,7 @@
       letter-spacing: 0.5px;
     }
     .hero h1 {
-      font-family: 'Noto Serif JP', serif;
+      font-family: 'Shippori Mincho B1', serif;
       font-size: 42px;
       font-weight: 700;
       line-height: 1.5;
@@ -235,7 +235,7 @@
       font-weight: 500;
     }
     .profile-title {
-      font-family: 'Noto Serif JP', serif;
+      font-family: 'Shippori Mincho B1', serif;
       font-size: 22px;
       font-weight: 700;
       color: var(--primary-dark);
@@ -243,7 +243,7 @@
       margin-bottom: 16px;
     }
     .profile-name {
-      font-family: 'Noto Serif JP', serif;
+      font-family: 'Shippori Mincho B1', serif;
       font-size: 28px;
       font-weight: 700;
       color: var(--primary-dark);
@@ -288,7 +288,7 @@
       margin-bottom: 0;
     }
     .message-body .quote {
-      font-family: 'Noto Serif JP', serif;
+      font-family: 'Shippori Mincho B1', serif;
       color: var(--primary);
       font-weight: 500;
       font-style: italic;
@@ -303,7 +303,7 @@
       border-top: 1px dashed var(--border);
     }
     .message-closing-text {
-      font-family: 'Noto Serif JP', serif;
+      font-family: 'Shippori Mincho B1', serif;
       font-size: 28px;
       font-weight: 700;
       color: var(--primary-dark);
@@ -332,7 +332,7 @@
 
     /* ===== CTA SECTION ===== */
     .cta-section {
-      background: linear-gradient(135deg, #283e59 0%, #1e3a5f 50%, #1a4a7a 100%);
+      background: linear-gradient(135deg, #3A6FE0 0%, #4A82F4 50%, #5A90F8 100%);
       color: #fff;
       text-align: center;
       padding: 80px 24px;
@@ -514,6 +514,53 @@
       resize: vertical;
       line-height: 1.7;
     }
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+      user-select: none;
+    }
+    .checkbox-label:hover {
+      border-color: var(--primary-light);
+      background: #f8fbff;
+    }
+    .checkbox-label:has(input:checked) {
+      border-color: var(--primary);
+      background: #eef5ff;
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+    .checkbox-label input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .checkbox-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-main);
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .checkbox-group {
+        flex-direction: column;
+      }
+      .checkbox-label {
+        width: 100%;
+      }
+    }
     .form-submit {
       margin-top: 12px;
       text-align: center;
@@ -662,6 +709,112 @@
       }
       .header-logo img { height: 30px; }
     }
+    /* ===== ENHANCED TYPOGRAPHY ===== */
+    .hero-label {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    [data-reveal].revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [data-reveal-delay="1"] { transition-delay: 0.15s; }
+    [data-reveal-delay="2"] { transition-delay: 0.3s; }
+    [data-reveal-delay="3"] { transition-delay: 0.45s; }
+
+    /* ===== GRAIN TEXTURE ===== */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 180px;
+    }
+
+    /* ===== CTA PULSE ===== */
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(244, 70, 70, 0.45); }
+      70% { box-shadow: 0 0 0 14px rgba(244, 70, 70, 0); }
+    }
+    .cta-button, .header-cta-button {
+      animation: ctaPulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .cta-button:hover, .header-cta-button:hover {
+      animation: none;
+    }
+
+    /* ===== HERO STAGGER ===== */
+    .hero-label, .hero h1, .hero-sub {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .hero-label { animation-delay: 0.1s; }
+    .hero h1 { animation-delay: 0.25s; }
+    .hero-sub { animation-delay: 0.4s; }
+    @keyframes heroIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== PROFILE PHOTO FLOAT ===== */
+    @keyframes photoFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .profile-photo {
+      animation: photoFloat 4.5s ease-in-out infinite;
+    }
+
+    /* ===== MESSAGE PARAGRAPHS STAGGER ===== */
+    .message-body p {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .message-body p.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== HEADER SCROLL ===== */
+    .header {
+      transition: box-shadow 0.35s ease;
+    }
+    .header.scrolled {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ===== MESSAGE CLOSING ENHANCED ===== */
+    .message-closing-text {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, #1a4a7a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ===== PROFILE CARD HOVER ===== */
+    .profile {
+      transition: box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .profile:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(40, 62, 89, 0.1);
+    }
+
+    /* ===== FORM LABEL ACCENT ===== */
+    .form-label {
+      font-family: 'Outfit', sans-serif;
+    }
   </style>
 </head>
 <body>
@@ -669,7 +822,7 @@
   <header class="header">
     <div class="header-inner">
       <a href="#" class="header-logo">
-        <img src="TUNAG_for_UNION_fulllogo.png" alt="TUNAG for UNION">
+        <img src="common_file/TUNAG_for_UNION_fulllogo.png" alt="TUNAG for UNION">
       </a>
       <div class="header-actions">
         <a href="javascript:history.back()" class="header-back">← 戻る</a>
@@ -691,9 +844,9 @@
   <main class="main">
     <div class="main-inner">
       <!-- PROFILE -->
-      <div class="profile">
+      <div class="profile" data-reveal>
         <div class="profile-photo">
-          <img src="sasaki_photo.JPG" alt="佐々木 隆寛 / 株式会社スタメン 専門役員">
+          <img src="message_file/sasaki_photo.JPG" alt="佐々木 隆寛 / 株式会社スタメン 専門役員">
         </div>
         <div class="profile-info">
           <div class="profile-company">株式会社スタメン</div>
@@ -704,7 +857,7 @@
       </div>
 
       <!-- MESSAGE -->
-      <article class="message-card">
+      <article class="message-card" data-reveal>
         <div class="message-body">
           <p>働く環境はかつてないスピードで変化し、雇用の在り方も、働く人の価値観も、多様化し続けています。その変化のただ中で、私は強い危機感と同時に、大きな可能性を感じてきました。</p>
           <p>私はこれまで、労働組合の専従（中央執行書記長）として、労使交渉、組織運営、教育研修、広報、組織化、政策推進など、活動の中枢に携わってまいりました。そのなかで、何度も自問してきたことがあります。</p>
@@ -714,7 +867,7 @@
           <p>当社はこれまで、組合コミュニケーションプラットフォーム「TUNAG」のご提供を通じて、多くの労働組合様の活性化に貢献してまいりました。しかし、組合が直面する課題はコミュニケーションだけにとどまりません。組織運営、教育・研修、業務効率化、デジタル活用——求められる支援の領域は年々広がっています。</p>
           <p>だからこそ私たちは、TUNAGという一つのプロダクトに閉じることなく、労働組合様が抱える課題に多方面からお応えできるよう、サービスの幅を広げ、進化させてまいります。</p>
         </div>
-        <div class="message-closing">
+        <div class="message-closing" data-reveal>
           <div class="message-closing-text">組合の未来を、ともにつくる。</div>
           <p class="message-closing-note">その想いを胸に、皆さまのパートナーとして<br>伴走し続けることをお約束いたします。</p>
         </div>
@@ -734,12 +887,12 @@
   <!-- CONTACT FORM -->
   <section class="form-section" id="contact-form">
     <div class="form-inner">
-      <div class="form-header">
+      <div class="form-header" data-reveal>
         <div class="form-label">CONTACT</div>
         <h2>お問い合わせフォーム</h2>
         <p>下記フォームに必要事項をご記入の上、送信ボタンを押してください。<br>担当者より2営業日以内にご連絡差し上げます。</p>
       </div>
-      <form class="contact-form" action="https://formsubmit.co/tunag-union-is@stmn.co.jp" method="POST" novalidate>
+      <form class="contact-form" data-reveal action="https://formsubmit.co/tunag-union-is@stmn.co.jp" method="POST" novalidate>
         <!-- FormSubmit settings -->
         <input type="hidden" name="_cc" value="union-sales@stmn.co.jp">
         <input type="hidden" name="_subject" value="【TUNAG for UNION】お問い合わせフォームより新規受付">
@@ -812,8 +965,45 @@
             <option value="〜100名">〜100名</option>
             <option value="101〜500名">101〜500名</option>
             <option value="500〜1,000名">500〜1,000名</option>
-            <option value="1,001名〜">1,001名〜</option>
+            <option value="1,001〜2,000名">1,001〜2,000名</option>
+            <option value="2,001〜3,000名">2,001〜3,000名</option>
+            <option value="3,001〜5,000名">3,001〜5,000名</option>
+            <option value="5,001〜10,000名">5,001〜10,000名</option>
+            <option value="10,001名〜">10,001名〜</option>
           </select>
+        </div>
+
+        <div class="form-field">
+          <label>
+            ご関心のあるサービス（複数選択可）
+            <span class="required">必須</span>
+          </label>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="interested_services" value="TUNAG for UNION（アプリ）">
+              <span class="checkbox-text">TUNAG for UNION（アプリ）</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="interested_services" value="アドバイザリー">
+              <span class="checkbox-text">アドバイザリー</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="interested_services" value="カスタムセミナー">
+              <span class="checkbox-text">カスタムセミナー</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="interested_services" value="書記代行">
+              <span class="checkbox-text">書記代行</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="interested_services" value="コミュニティ">
+              <span class="checkbox-text">コミュニティ</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="interested_services" value="その他">
+              <span class="checkbox-text">その他</span>
+            </label>
+          </div>
         </div>
 
         <div class="form-field">
@@ -867,5 +1057,50 @@
       </div>
     </div>
   </footer>
+<script>
+  // Scroll Reveal
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+  // Message paragraphs stagger reveal
+  const paragraphObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        paragraphObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.message-body p').forEach((p, i) => {
+    p.style.transitionDelay = `${i * 0.12}s`;
+    paragraphObserver.observe(p);
+  });
+
+  // Header scroll
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive: true });
+
+  // Form field focus animation
+  document.querySelectorAll('.form-field input, .form-field select, .form-field textarea').forEach(field => {
+    field.addEventListener('focus', () => {
+      field.parentElement.style.transform = 'scale(1.01)';
+      field.parentElement.style.transition = 'transform 0.2s ease';
+    });
+    field.addEventListener('blur', () => {
+      field.parentElement.style.transform = 'scale(1)';
+    });
+  });
+</script>
 </body>
 </html>
