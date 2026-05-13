@@ -362,11 +362,17 @@
     .mobile-menu-btn {
       display: none;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       gap: 5px;
+      width: 32px;
+      height: 32px;
       background: none;
       border: none;
       cursor: pointer;
-      padding: 4px;
+      padding: 0;
+      position: relative;
+      z-index: 1002;
     }
     .mobile-menu-btn span {
       display: block;
@@ -374,7 +380,128 @@
       height: 2px;
       background: var(--navy);
       border-radius: 2px;
-      transition: all var(--transition);
+      transition: transform 0.3s ease, opacity 0.2s ease, background 0.2s ease;
+      transform-origin: center;
+    }
+    .mobile-menu-btn[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-btn[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-menu-btn[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ===== MOBILE NAV DRAWER ===== */
+    .mobile-nav {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--white);
+      z-index: 1001;
+      overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+      -webkit-overflow-scrolling: touch;
+    }
+    .mobile-nav.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .mobile-nav-inner {
+      padding: 24px 24px 56px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .mobile-nav-links {
+      list-style: none;
+      margin: 0 0 28px;
+      padding: 0;
+    }
+    .mobile-nav-links > li {
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-nav-links > li:last-child { border-bottom: none; }
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 4px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .mobile-nav-link:hover,
+    .mobile-nav-link:active {
+      color: var(--blue);
+    }
+    .mobile-nav-link-feature {
+      color: var(--blue);
+      font-weight: 700;
+    }
+    .mobile-nav-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .mobile-nav-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .mobile-nav-group {
+      padding: 14px 0;
+    }
+    .mobile-nav-group-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--navy);
+      padding: 4px 4px 12px;
+    }
+    .mobile-nav-sublinks {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0 14px;
+      border-left: 2px solid var(--border);
+    }
+    .mobile-nav-sublink {
+      padding: 11px 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray);
+    }
+    .mobile-nav-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .mobile-nav-cta .btn {
+      width: 100%;
+      padding: 16px 28px;
+      font-size: 15px;
+      justify-content: center;
+    }
+    body.menu-open {
+      overflow: hidden;
+    }
+    @media (min-width: 769px) {
+      .mobile-nav { display: none; }
     }
 
     /* ===== HERO ===== */
@@ -1712,11 +1839,38 @@
           <a href="#" class="btn btn-outline">無料相談</a>
         </div>
       </nav>
-      <button class="mobile-menu-btn" aria-label="メニュー">
+      <button class="mobile-menu-btn" aria-label="メニュー" aria-controls="mobileNav" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
+
+  <!-- ===== MOBILE NAV ===== -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <nav class="mobile-nav-inner">
+      <ul class="mobile-nav-links">
+        <li><a href="#tunag-for-union" class="mobile-nav-link mobile-nav-link-feature"><span class="mobile-nav-icon"><img src="index_assets/tunag-app-icon.png" alt=""></span>アプリ</a></li>
+        <li><a href="#articles" class="mobile-nav-link">お役立ち記事</a></li>
+        <li><a href="#cases" class="mobile-nav-link">導入事例</a></li>
+        <li class="mobile-nav-group">
+          <div class="mobile-nav-group-title">サービス一覧</div>
+          <ul class="mobile-nav-sublinks">
+            <li><a href="#" class="mobile-nav-link mobile-nav-sublink">アドバイザリー</a></li>
+            <li><a href="#" class="mobile-nav-link mobile-nav-sublink">オーダーセミナー</a></li>
+            <li><a href="#" class="mobile-nav-link mobile-nav-sublink">オンライン書記代行</a></li>
+          </ul>
+        </li>
+        <li><a href="#research" class="mobile-nav-link">労働組合研究会</a></li>
+        <li><a href="#news" class="mobile-nav-link">ニュース</a></li>
+        <li><a href="#events" class="mobile-nav-link">イベント一覧</a></li>
+        <li><a href="#news" class="mobile-nav-link">お知らせ</a></li>
+      </ul>
+      <div class="mobile-nav-cta">
+        <a href="#" class="btn btn-primary mobile-nav-link">資料請求</a>
+        <a href="#" class="btn btn-outline mobile-nav-link">無料相談</a>
+      </div>
+    </nav>
+  </div>
 
   <!-- ===== HERO ===== -->
   <section class="hero">
@@ -2231,6 +2385,36 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
     reveals.forEach((el) => revealObserver.observe(el));
+
+    // Mobile menu toggle
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileNav = document.getElementById('mobileNav');
+    const setMenuState = (open) => {
+      mobileNav.classList.toggle('is-open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      mobileNav.setAttribute('aria-hidden', String(!open));
+      document.body.classList.toggle('menu-open', open);
+    };
+    menuBtn.addEventListener('click', () => {
+      const willOpen = !mobileNav.classList.contains('is-open');
+      setMenuState(willOpen);
+    });
+    mobileNav.querySelectorAll('.mobile-nav-link').forEach((link) => {
+      link.addEventListener('click', () => setMenuState(false));
+    });
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+        setMenuState(false);
+        menuBtn.focus();
+      }
+    });
+    // Close if resizing to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && mobileNav.classList.contains('is-open')) {
+        setMenuState(false);
+      }
+    });
 
     // Smooth scroll for nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
