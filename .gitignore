@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Claude Code / agent tooling
+.claude/
+.agents/
+skills-lock.json
+
+# Logs
+*.log
