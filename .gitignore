@@ -11,5 +11,8 @@
 .agents/
 skills-lock.json
 
+# Local dev server
+server.rb
+
 # Logs
 *.log
