@@ -283,7 +283,6 @@
       font-weight: 700;
       color: var(--blue);
     }
-    .nav-links a.nav-tunag::after { display: none; }
     .nav-links a.nav-tunag:hover { color: var(--blue-dark); }
     .nav-tunag-logo {
       width: 22px;
@@ -1177,11 +1176,15 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 32px 24px;
+      padding: 32px 24px 56px;
       text-align: center;
       transition: all var(--transition);
       position: relative;
       overflow: hidden;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
     .service-card::after {
       content: '';
@@ -1193,12 +1196,44 @@
       background: var(--blue);
       transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .service-card:hover {
+    .service-card:hover,
+    .service-card:focus-visible {
       transform: translateY(-6px);
       box-shadow: var(--shadow-md);
       border-color: rgba(16,123,255,0.2);
+      outline: none;
     }
-    .service-card:hover::after { width: 100%; }
+    .service-card:hover::after,
+    .service-card:focus-visible::after { width: 100%; }
+    .service-card-arrow {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--blue-lighter);
+      color: var(--blue);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+    }
+    .service-card-arrow svg {
+      width: 14px;
+      height: 14px;
+    }
+    .service-card:hover .service-card-arrow,
+    .service-card:focus-visible .service-card-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .service-card:hover .service-card-arrow {
+      background: var(--blue);
+      color: var(--white);
+    }
     .service-card-title {
       font-family: var(--serif);
       font-weight: 700;
@@ -1441,91 +1476,6 @@
       line-height: 1.7;
     }
 
-    /* ===== RESEARCH ===== */
-    .research {
-      background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    .research::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: var(--noise);
-      opacity: 0.04;
-      pointer-events: none;
-      mix-blend-mode: multiply;
-    }
-    .research .container { position: relative; }
-    .research-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      margin-top: 50px;
-    }
-    .research-content { }
-    .research-title-sub {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 16px;
-    }
-    .research-desc {
-      font-size: 15px;
-      color: var(--gray);
-      line-height: 1.9;
-      margin-bottom: 24px;
-    }
-    .research-features {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-    .research-feature {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-    .research-feature::before {
-      content: '✓';
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--blue-light);
-      color: var(--blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-    .research-visual {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: var(--shadow-sm);
-      aspect-ratio: 4/3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .research-visual-placeholder {
-      width: 100%;
-      height: 100%;
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, var(--blue-light) 0%, var(--blue-lighter) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 48px;
-      opacity: 0.5;
-    }
-
     /* ===== ARTICLES ===== */
     .articles {
       background: var(--cream);
@@ -1636,8 +1586,6 @@
 
     /* ===== RESPONSIVE ADDITIONS ===== */
     @media (max-width: 1024px) {
-      .research-inner { grid-template-columns: 1fr; }
-      .research-visual { display: none; }
     }
     @media (max-width: 768px) {
       .cases-grid { grid-template-columns: 1fr; }
@@ -1816,7 +1764,7 @@
       </a>
       <nav class="nav">
         <ul class="nav-links">
-          <li><a href="#tunag-for-union" class="nav-tunag"><span class="nav-tunag-logo"><img src="index_assets/tunag-app-icon.png" alt="アプリ"></span>アプリ</a></li>
+          <li><a href="https://biz.tunag.jp/lp/union" class="nav-tunag"><span class="nav-tunag-logo"><img src="index_assets/tunag-app-icon.png" alt="アプリ"></span>アプリ</a></li>
           <li><a href="#articles">お役立ち記事</a></li>
           <li><a href="#cases">導入事例</a></li>
           <li class="nav-has-dropdown">
@@ -1824,10 +1772,10 @@
               <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
             </a>
             <ul class="nav-dropdown">
-              <li><a href="#">アドバイザリー</a></li>
-              <li><a href="#">オーダーセミナー</a></li>
-              <li><a href="#">オンライン書記代行</a></li>
-              <li><a href="#research">労働組合研究会</a></li>
+              <li><a href="https://yossydanna.github.io/tunag_for_union/advisory">アドバイザリー</a></li>
+              <li><a href="https://yossydanna.github.io/tunag_for_union/seminar">オーダーセミナー</a></li>
+              <li><a href="https://assistant.tunag.jp/union">オンライン書記代行</a></li>
+              <li><a href="https://yossydanna.github.io/tunag_for_union/underconstruction.html">労働組合研究会</a></li>
             </ul>
           </li>
           <li><a href="#news">ニュース</a></li>
@@ -1835,8 +1783,7 @@
           <li><a href="#news">お知らせ</a></li>
         </ul>
         <div class="nav-cta">
-          <a href="#" class="btn btn-primary">資料請求</a>
-          <a href="#" class="btn btn-outline">無料相談</a>
+          <a href="#" class="btn btn-primary">資料ダウンロード</a>
         </div>
       </nav>
       <button class="mobile-menu-btn" aria-label="メニュー" aria-controls="mobileNav" aria-expanded="false">
@@ -1849,16 +1796,16 @@
   <div class="mobile-nav" id="mobileNav" aria-hidden="true">
     <nav class="mobile-nav-inner">
       <ul class="mobile-nav-links">
-        <li><a href="#tunag-for-union" class="mobile-nav-link mobile-nav-link-feature"><span class="mobile-nav-icon"><img src="index_assets/tunag-app-icon.png" alt=""></span>アプリ</a></li>
+        <li><a href="https://biz.tunag.jp/lp/union" class="mobile-nav-link mobile-nav-link-feature"><span class="mobile-nav-icon"><img src="index_assets/tunag-app-icon.png" alt=""></span>アプリ</a></li>
         <li><a href="#articles" class="mobile-nav-link">お役立ち記事</a></li>
         <li><a href="#cases" class="mobile-nav-link">導入事例</a></li>
         <li class="mobile-nav-group">
           <div class="mobile-nav-group-title">サービス一覧</div>
           <ul class="mobile-nav-sublinks">
-            <li><a href="#" class="mobile-nav-link mobile-nav-sublink">アドバイザリー</a></li>
-            <li><a href="#" class="mobile-nav-link mobile-nav-sublink">オーダーセミナー</a></li>
-            <li><a href="#" class="mobile-nav-link mobile-nav-sublink">オンライン書記代行</a></li>
-            <li><a href="#research" class="mobile-nav-link mobile-nav-sublink">労働組合研究会</a></li>
+            <li><a href="https://yossydanna.github.io/tunag_for_union/advisory" class="mobile-nav-link mobile-nav-sublink">アドバイザリー</a></li>
+            <li><a href="https://yossydanna.github.io/tunag_for_union/seminar" class="mobile-nav-link mobile-nav-sublink">オーダーセミナー</a></li>
+            <li><a href="https://assistant.tunag.jp/union" class="mobile-nav-link mobile-nav-sublink">オンライン書記代行</a></li>
+            <li><a href="https://yossydanna.github.io/tunag_for_union/underconstruction.html" class="mobile-nav-link mobile-nav-sublink">労働組合研究会</a></li>
           </ul>
         </li>
         <li><a href="#news" class="mobile-nav-link">ニュース</a></li>
@@ -1866,8 +1813,7 @@
         <li><a href="#news" class="mobile-nav-link">お知らせ</a></li>
       </ul>
       <div class="mobile-nav-cta">
-        <a href="#" class="btn btn-primary mobile-nav-link">資料請求</a>
-        <a href="#" class="btn btn-outline mobile-nav-link">無料相談</a>
+        <a href="#" class="btn btn-primary mobile-nav-link">資料ダウンロード</a>
       </div>
     </nav>
   </div>
@@ -1889,7 +1835,6 @@
             <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
             資料ダウンロード
           </a>
-          <a href="#" class="btn btn-secondary">無料相談</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -2032,7 +1977,7 @@
               <span class="service-hero-feature">各種申請</span>
               <span class="service-hero-feature">活動報告</span>
             </div>
-            <a href="#" class="btn btn-primary">詳しく見る</a>
+            <a href="https://biz.tunag.jp/lp/union" class="btn btn-primary">詳しく見る</a>
           </div>
           <div class="service-hero-visual">
             <div class="service-hero-mockup">
@@ -2047,26 +1992,38 @@
       <!-- Sub Services -->
       <h3 class="services-sub-title" id="support">その他のサービス</h3>
       <div class="services-grid reveal-stagger">
-        <div class="service-card">
-          <div class="service-card-image"><img src="index_assets/service-comprehensive.png" alt="総合支援サービス"></div>
+        <a href="https://yossydanna.github.io/tunag_for_union/advisory" class="service-card" aria-label="アドバイザリーの詳細を見る">
+          <div class="service-card-image"><img src="index_assets/service-comprehensive.png" alt="アドバイザリー"></div>
           <h4 class="service-card-title">アドバイザリー</h4>
           <p class="service-card-desc">豊富な組合運営経験を持つ専門家が、執行部の一員のように寄り添い、課題解決を支援するサービスです。</p>
-        </div>
-        <div class="service-card">
+          <span class="service-card-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+        <a href="https://yossydanna.github.io/tunag_for_union/seminar" class="service-card" aria-label="オーダーセミナーの詳細を見る">
           <div class="service-card-image"><img src="index_assets/service-seminar.png" alt="オーダーセミナー"></div>
           <h4 class="service-card-title">オーダーセミナー</h4>
           <p class="service-card-desc">貴組合のニーズや課題に合わせて、テーマ・内容・形式をフルカスタマイズできるオーダーメイドセミナーです。</p>
-        </div>
-        <div class="service-card">
+          <span class="service-card-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+        <a href="https://assistant.tunag.jp/union" class="service-card" aria-label="オンライン書記代行の詳細を見る">
           <div class="service-card-image"><img src="index_assets/service-clerical.png" alt="オンライン書記代行"></div>
           <h4 class="service-card-title">オンライン書記代行</h4>
           <p class="service-card-desc">議事録作成や各種事務手続きなどの書記業務を代行。BPaaSとして、組合がコア活動に集中できる環境を整えます。</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card-image"><img src="index_assets/service-community.png" alt="コミュニティ"></div>
+          <span class="service-card-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+        <a href="https://yossydanna.github.io/tunag_for_union/underconstruction.html" class="service-card" aria-label="労働組合研究会の詳細を見る">
+          <div class="service-card-image"><img src="index_assets/service-community.png" alt="労働組合研究会"></div>
           <h4 class="service-card-title">労働組合研究会</h4>
           <p class="service-card-desc">全国の労働組合や経験豊富な実務者から学びながら、自分たちの組織で実現するための「具体的なやり方」を共に探求する場です。</p>
-        </div>
+          <span class="service-card-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
       </div>
     </div>
   </section>
@@ -2186,34 +2143,6 @@
     </div>
   </section>
 
-  <!-- ===== RESEARCH ===== -->
-  <section class="research section" id="research">
-    <div class="container">
-      <div class="section-center reveal">
-        <span class="section-label">Research Group</span>
-        <h2 class="section-title">労働組合研究会</h2>
-        <p class="section-subtitle">組合活動の未来を共に考え、実践知を深める研究コミュニティ。</p>
-      </div>
-      <div class="research-inner reveal">
-        <div class="research-content">
-          <p class="research-desc">
-            労働組合研究会は、組合運営の課題やベストプラクティスを調査・研究し、その知見を広く発信するための取り組みです。各業種の組合リーダーや専門家が集まり、組合活動の質を高めるための議論と実践を行っています。
-          </p>
-          <div class="research-features">
-            <div class="research-feature">定期的なテーマ別研究会の開催</div>
-            <div class="research-feature">調査レポート・活動レポートの発行</div>
-            <div class="research-feature">先進的な組合運営事例の収集と分析</div>
-            <div class="research-feature">外部専門家を招いた特別講演</div>
-          </div>
-          <a href="#" class="btn btn-secondary">研究会の詳細を見る</a>
-        </div>
-        <div class="research-visual">
-          <div class="research-visual-placeholder">🔬</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== ARTICLES ===== -->
   <section class="articles section" id="articles">
     <div class="container">
@@ -2298,13 +2227,12 @@
   <section class="cta" id="contact">
     <div class="container">
       <h2 class="cta-title">労働組合の運営を、<br>もっとスマートに。</h2>
-      <p class="cta-desc">まずはお気軽にご相談ください。組合の課題に合わせた最適なプランをご提案します。</p>
+      <p class="cta-desc">まずは資料をご覧ください。組合の課題に合わせた最適なプランをご提案します。</p>
       <div class="btn-group">
         <a href="#" class="btn btn-primary">
           <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
           資料ダウンロード
         </a>
-        <a href="#" class="btn btn-outline">無料相談</a>
       </div>
     </div>
   </section>
@@ -2320,11 +2248,11 @@
         <div>
           <h4 class="footer-heading">サービス</h4>
           <ul class="footer-links">
-            <li><a href="#tunag-for-union">アプリ</a></li>
-            <li><a href="#">アドバイザリー</a></li>
-            <li><a href="#">オーダーセミナー</a></li>
-            <li><a href="#">オンライン書記代行</a></li>
-            <li><a href="#research">労働組合研究会</a></li>
+            <li><a href="https://biz.tunag.jp/lp/union">アプリ</a></li>
+            <li><a href="https://yossydanna.github.io/tunag_for_union/advisory">アドバイザリー</a></li>
+            <li><a href="https://yossydanna.github.io/tunag_for_union/seminar">オーダーセミナー</a></li>
+            <li><a href="https://assistant.tunag.jp/union">オンライン書記代行</a></li>
+            <li><a href="https://yossydanna.github.io/tunag_for_union/underconstruction.html">労働組合研究会</a></li>
           </ul>
         </div>
         <div>
@@ -2339,8 +2267,7 @@
         <div>
           <h4 class="footer-heading">お問い合わせ</h4>
           <ul class="footer-links">
-            <li><a href="#">資料請求フォーム</a></li>
-            <li><a href="#">無料相談フォーム</a></li>
+            <li><a href="#">資料ダウンロード</a></li>
             <li><a href="#">メルマガ登録</a></li>
             <li><a href="#contact">お問い合わせ</a></li>
           </ul>
@@ -2362,7 +2289,6 @@
   <!-- ===== FLOATING CTA ===== -->
   <div class="floating-cta" id="floatingCta">
     <a href="#" class="btn btn-primary">資料ダウンロード</a>
-    <a href="#" class="btn btn-secondary">無料相談</a>
   </div>
 
   <script>
